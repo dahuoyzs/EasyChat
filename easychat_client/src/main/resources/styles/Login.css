@@ -1,0 +1,16 @@
+#borderPane {
+    -fx-background-color: #9cbe74;
+}
+
+#headImage {
+
+}
+.button{
+    -fx-font-size: 18px;
+    -fx-opacity: 1.0;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #f89406;
+}
+.button:hover {
+    -fx-opacity: 0.6;
+}
