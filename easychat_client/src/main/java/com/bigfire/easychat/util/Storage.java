@@ -2,6 +2,7 @@ package com.bigfire.easychat.util;
 
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
@@ -19,5 +20,7 @@ public class Storage {
     public static ConcurrentHashMap<String, Parent> views = new ConcurrentHashMap();
     public static ConcurrentHashMap<String, Object> controllers = new ConcurrentHashMap();
     public static ConcurrentHashMap<String, Stage> stageViews = new ConcurrentHashMap();
+    public static String token;
+
 
 }
