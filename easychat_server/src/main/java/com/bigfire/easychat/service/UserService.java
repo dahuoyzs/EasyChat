@@ -72,15 +72,16 @@ public class UserService {
                 if (!u.getHeadUrl().equals(user.getHeadUrl())){
                     userDao.update(user.getHeadUrl(),user.getId());
                 }
-                Long userId = u.getId();
+                Long userId = user.getId();
                 String token = JWTUtil.createToken(userId+"");
+                Boolean isExist = Storage.userOnline.containsKey(userId);
+                if (isExist)return Result.getErrorResult("该用户已经登录过了，请勿重复登录");
+                Storage.userOnline.put(user.getId(),token);
+
                 return Result.getMsgResult("登录成功",token);
             }else return Result.getErrorResult("密码错误");
         }
     };
-//    public Result<User> logoutResult(User user){
-//
-//    }
 
 
 }
