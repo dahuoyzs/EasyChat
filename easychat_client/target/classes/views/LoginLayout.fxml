@@ -55,12 +55,12 @@
                         </ImageView>
                         <!--<ImageView fx:id="Sarahview" fitHeight="93.0" fitWidth="86.0" preserveRatio="true" visible="true">-->
                         <!--<image>-->
-                        <!--<Image fx:id="headImage" url="@../images/new/head_man.png" />-->
+                        <!--<Image fx:id="headImage" url="@../images/icon/head_man.png" />-->
                         <!--</image>-->
                         <!--</ImageView>-->
                     </children>
                 </StackPane>
-                <Label fx:id="noteLabel" alignment="CENTER" prefHeight="15.0" prefWidth="322.0" text="登录前建议先检测服务器地址是否可用" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label fx:id="noteLabel" alignment="CENTER" prefHeight="15.0" prefWidth="322.0" text="" textFill="Black" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <TextField fx:id="usernameTextfield" focusTraversable="true" prefHeight="25.0" promptText="用户名" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <PasswordField fx:id="passwordField" prefHeight="25.0" promptText="密码" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
@@ -95,8 +95,8 @@
                    <TextField fx:id="portTextfield" prefHeight="25.0" prefWidth="73.0" promptText="端口" text="8080" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#testConnect" text="检测" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button mnemonicParsing="false" onAction="#test" text="测试" GridPane.rowIndex="6" />
+            <!--<Button mnemonicParsing="false" onAction="#testConnect" text="检测" GridPane.columnIndex="1" GridPane.rowIndex="6" />-->
+            <!--<Button mnemonicParsing="false" onAction="#test" text="测试" GridPane.rowIndex="6" />-->
             <ImageView fx:id="imageViewTest"  fitHeight="130.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
 
             </children>

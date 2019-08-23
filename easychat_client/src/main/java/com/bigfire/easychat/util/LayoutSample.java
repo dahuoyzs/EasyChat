@@ -188,7 +188,7 @@ public class LayoutSample extends Application {
 
         // House icon in column 1, rows 1-2
         ImageView imageHouse = new ImageView(
-                new Image(getClass().getClassLoader().getResource("images/new/head_man.png").toString()));
+                new Image(getClass().getClassLoader().getResource("images/head/head_man.png").toString()));
         grid.add(imageHouse, 0, 0, 1, 2);
 
         // Left label in column 1 (bottom), row 3
@@ -197,8 +197,8 @@ public class LayoutSample extends Application {
         grid.add(goodsPercent, 0, 2);
 
         // Chart in columns 2-3, row 3
-//        ImageView imageChart = new ImageView(new Image(LayoutSample.class.getResourceAsStream("graphics/piechart.png")));
-        ImageView imageChart = new ImageView(new Image(getClass().getClassLoader().getResource("images/new/head_man.png").toString()));
+//        ImageView imageChart = icon ImageView(icon Image(LayoutSample.class.getResourceAsStream("graphics/piechart.png")));
+        ImageView imageChart = new ImageView(new Image(getClass().getClassLoader().getResource("images/head/head_man.png").toString()));
         grid.add(imageChart, 1, 2, 2, 1);
 
         // Right label in column 4 (top), row 3
@@ -223,10 +223,10 @@ public class LayoutSample extends Application {
         flow.setStyle("-fx-background-color: DAE6F3;");
 
         ImageView pages[] = new ImageView[1];
-        pages[0] = new ImageView(new Image(getClass().getClassLoader().getResource("images/new/head_man.png").toString()));
+        pages[0] = new ImageView(new Image(getClass().getClassLoader().getResource("images/head/head_man.png").toString()));
 //        for (int i=0; i<8; i++) {
-//            pages[i] = new ImageView(
-//                    new Image(LayoutSample.class.getResourceAsStream(
+//            pages[i] = icon ImageView(
+//                    icon Image(LayoutSample.class.getResourceAsStream(
 //                            "graphics/chart_"+(i+1)+".png")));
 //            flow.getChildren().add(pages[i]);
 //        }
@@ -247,11 +247,11 @@ public class LayoutSample extends Application {
         tile.setStyle("-fx-background-color: DAE6F3;");
 
         ImageView pages[] = new ImageView[1];
-        pages[0] = new ImageView(new Image(getClass().getClassLoader().getResource("images/new/head_man.png").toString()));
+        pages[0] = new ImageView(new Image(getClass().getClassLoader().getResource("images/head/head_man.png").toString()));
 
 //        for (int i=0; i<8; i++) {
-//            pages[i] = new ImageView(
-//                    new Image(LayoutSample.class.getResourceAsStream(
+//            pages[i] = icon ImageView(
+//                    icon Image(LayoutSample.class.getResourceAsStream(
 //                            "graphics/chart_"+(i+1)+".png")));
 //            tile.getChildren().add(pages[i]);
 //        }

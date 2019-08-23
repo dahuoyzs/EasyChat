@@ -2,7 +2,11 @@ package com.bigfire.easychat.repository;
 
 import com.bigfire.easychat.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
+import org.springframework.data.repository.query.Param;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,7 +17,12 @@ import org.springframework.stereotype.Repository;
  * @ Email  ：835476090@qq.com
  * @ Desc   :
  */
-@Repository
-public interface UserDao extends JpaRepository<User, Long> {
+
+
+public interface UserDao extends JpaRepositoryImplementation<User, Long> {
     User findByUsername(String username);
+    @Modifying
+    @Query("update User u set u.headUrl = :headUrl where u.id = :userId")
+    int update(@Param("headUrl") String headUrl, @Param("userId") @NonNull Long userId);
+
 }

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
  * @ Email  ：835476090@qq.com
  * @ Desc   :
  */
-@Repository
+
 public interface HeadDao extends JpaRepository<Head,Long> {
 
 }

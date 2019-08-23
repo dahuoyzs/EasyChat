@@ -34,9 +34,9 @@ public class TitledPaneSample extends Application {
         Scene scene = new Scene(new Group(), 80, 180);
         final Accordion accordion = new Accordion();
 //        for (int i = 0; i < imageNames.length; i++) {
-//            images[i] = new Image(getClass().getResourceAsStream(imageNames[i] + ".jpg"));
-//            pics[i] = new ImageView(images[i]);
-//            tps[i] = new TitledPane(imageNames[i], pics[i]);
+//            images[i] = icon Image(getClass().getResourceAsStream(imageNames[i] + ".jpg"));
+//            pics[i] = icon ImageView(images[i]);
+//            tps[i] = icon TitledPane(imageNames[i], pics[i]);
 //        }
 
         accordion.getPanes().addAll(tps);

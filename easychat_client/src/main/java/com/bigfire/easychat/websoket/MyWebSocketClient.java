@@ -62,6 +62,11 @@ public class MyWebSocketClient extends WebSocketClient {
             while (!client.getReadyState().equals(WebSocket.READYSTATE.OPEN) && running) {
                 Thread.sleep(1);
             }
+            if (running){//连接成功
+
+            }else {//连接失败
+
+            }
             LoginController loginController = (LoginController) Storage.controllers.get("loginController");
             loginController.testConnect(running);
 //            LoginController.loginController.testConnect(running);
@@ -91,7 +96,7 @@ public class MyWebSocketClient extends WebSocketClient {
 
     //    public static MyWebSocketClient listener(String ip,String port){
 //        try {
-//            MyWebSocketClient client = new MyWebSocketClient("ws://"+ip+":"+port+"/websocket");
+//            MyWebSocketClient client = icon MyWebSocketClient("ws://"+ip+":"+port+"/websocket");
 //            client.connect();
 //
 //            single = client;
@@ -107,7 +112,7 @@ public class MyWebSocketClient extends WebSocketClient {
     }
 //    public static void main(String[] args) {
 //        try {
-//            MyWebSocketClient client = new MyWebSocketClient("ws://localhost:8080/websocket");
+//            MyWebSocketClient client = icon MyWebSocketClient("ws://localhost:8080/websocket");
 //            client.connect();
 //            while (!client.getReadyState().equals(WebSocket.READYSTATE.OPEN)) {
 //                System.out.println("还没有打开");

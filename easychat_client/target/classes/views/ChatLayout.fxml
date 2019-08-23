@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import java.lang.String?>
 
-<BorderPane fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.chatwindow.ChatController">
+<BorderPane fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bigfire.easychat.controller.ChatController">
    <center>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <children>
@@ -29,8 +29,8 @@
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
                   </TextArea>
-                  <Button fx:id="buttonSend" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sendButtonAction" prefHeight="43.0" prefWidth="140.0" scaleShape="false" text="Send" textAlignment="CENTER" HBox.hgrow="NEVER" />
-                  <Button fx:id="recordBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMousePressed="#recordVoiceMessage" />
+                  <Button fx:id="buttonSend" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sendButtonAction" prefHeight="43.0" prefWidth="140.0" scaleShape="false" text="发送" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                  <!--<Button fx:id="recordBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMousePressed="#recordVoiceMessage" />-->
                </children>
             </HBox>
          </children>
@@ -41,7 +41,7 @@
          <children>
             <HBox fx:id="onlineUsersHbox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="217.0" stylesheets="@../styles/ListViewStyle.css">
                <children>
-                  <Label prefHeight="50.0" prefWidth="124.0" text="Online Users:" textAlignment="CENTER" textFill="#fc6747">
+                  <Label prefHeight="50.0" prefWidth="124.0" text="在线用户:" textAlignment="CENTER" textFill="#000000">
                      <font>
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
@@ -52,7 +52,7 @@
                         <Insets bottom="10.0" />
                      </opaqueInsets>
                   </Label>
-                  <Label fx:id="onlineCountLabel" prefHeight="48.0" prefWidth="94.0" text="0" textFill="#fc6747">
+                  <Label fx:id="onlineCountLabel" prefHeight="48.0" prefWidth="94.0" text="0" textFill="#000000">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -68,51 +68,51 @@
       </VBox>
    </left>
    <top>
-      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #031c30;" BorderPane.alignment="CENTER">
-         <center>
-            <ImageView fitHeight="79.0" fitWidth="522.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@../images/fxchat.png" />
-               </image>
-               <BorderPane.margin>
-                  <Insets right="100.0" />
-               </BorderPane.margin>
-            </ImageView>
-         </center>
-         <right>
-            <HBox prefHeight="24.0" prefWidth="30.0" stylesheets="@../styles/ButtonStyle.css" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="23.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
-                     <image>
-                        <Image url="@../images/settings.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="30.0" top="30.0" />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="22.0" fitWidth="21.0" onMousePressed="#closeApplication" pickOnBounds="true" preserveRatio="true" styleClass="button">
-                     <image>
-                        <Image url="@../images/close_normal.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="30.0" top="30.0" />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-               </children>
-            </HBox>
-         </right>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <!--<center>-->
+            <!--<ImageView fitHeight="79.0" fitWidth="522.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">-->
+               <!--<image>-->
+                  <!--<Image url="@../images/head/stop.jpg" />-->
+               <!--</image>-->
+               <!--<BorderPane.margin>-->
+                  <!--<Insets right="100.0" />-->
+               <!--</BorderPane.margin>-->
+            <!--</ImageView>-->
+         <!--</center>-->
+         <!--<right>-->
+            <!--<HBox prefHeight="24.0" prefWidth="30.0" stylesheets="@../styles/ButtonStyle.css" BorderPane.alignment="CENTER">-->
+               <!--<children>-->
+                  <!--<ImageView fitHeight="23.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="button">-->
+                     <!--<image>-->
+                        <!--<Image url="@../images/settings.png" />-->
+                     <!--</image>-->
+                     <!--<HBox.margin>-->
+                        <!--<Insets right="30.0" top="30.0" />-->
+                     <!--</HBox.margin>-->
+                     <!--<cursor>-->
+                        <!--<Cursor fx:constant="HAND" />-->
+                     <!--</cursor>-->
+                  <!--</ImageView>-->
+                  <!--<ImageView fitHeight="22.0" fitWidth="21.0" onMousePressed="#closeApplication" pickOnBounds="true" preserveRatio="true" styleClass="button">-->
+                     <!--<image>-->
+                        <!--<Image url="@../images/close_normal.png" />-->
+                     <!--</image>-->
+                     <!--<HBox.margin>-->
+                        <!--<Insets right="30.0" top="30.0" />-->
+                     <!--</HBox.margin>-->
+                     <!--<cursor>-->
+                        <!--<Cursor fx:constant="HAND" />-->
+                     <!--</cursor>-->
+                  <!--</ImageView>-->
+               <!--</children>-->
+            <!--</HBox>-->
+         <!--</right>-->
          <left>
             <HBox prefWidth="259.0" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="userImageView" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/default.png" />
+                        <Image url="@../images/head/head_man.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="10.0" />
@@ -123,7 +123,7 @@
                         <Insets left="10.0" top="30.0" />
                      </HBox.margin>
                      <children>
-                        <Label fx:id="usernameLabel" text="Dominic Heal" textFill="#fa6648">
+                        <Label fx:id="usernameLabel" text="用户名" textFill="#000000">
                            <font>
                               <Font name="HelveticaNeue Medium" size="14.0" />
                            </font>

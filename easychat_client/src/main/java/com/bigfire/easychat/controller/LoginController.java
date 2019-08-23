@@ -3,7 +3,6 @@ package com.bigfire.easychat.controller;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONObject;
-import com.bigfire.easychat.App;
 import com.bigfire.easychat.entity.User;
 import com.bigfire.easychat.util.DialogUtil;
 import com.bigfire.easychat.util.IPUtil;
@@ -15,26 +14,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.java_websocket.client.WebSocketClient;
+import lombok.extern.slf4j.Slf4j;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Time;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * @ IDE    ：IntelliJ IDEA.
@@ -45,58 +39,92 @@ import java.util.TimerTask;
  * @ Desc   :
  */
 
-public class LoginController implements Initializable,TaskOk{
-    @FXML Label noteLabel;
-    @FXML TextField usernameTextfield;
-    @FXML PasswordField passwordField;
-    @FXML TextField ipTextfield;
-    @FXML TextField portTextfield;
-    @FXML ImageView imageViewHead;
-    @FXML ImageView imageViewTest;
+public class LoginController implements Initializable, TaskOk {
+    @FXML
+    Label noteLabel;
+    @FXML
+    TextField usernameTextfield;
+    @FXML
+    PasswordField passwordField;
+    @FXML
+    TextField ipTextfield;
+    @FXML
+    TextField portTextfield;
+    @FXML
+    ImageView imageViewHead;
+    @FXML
+    ImageView imageViewTest;
     //ip相关
     private String ip;
     private String port;
     private Boolean isCanConnect;
+
     //登录
     public void login() {
-        User user = check();
-        if (user!=null) {
-            String loginApi = "http://" + ip + ":" + port+"/user/login";
-            String loginResult = HttpUtil.post(loginApi, JSONObject.toJSONString(user));
-            JSONObject result = JSONObject.parseObject(loginResult);
-            Integer code = result.getInteger("code");
-            String msg = result.getString("msg");
-            if (code == 200) {
+        ip = ipTextfield.getText().trim();
+        port = portTextfield.getText().trim();
+        String loginApi = "http://" + ip + ":" + port + "/user/login";
+        JSONObject result = JSONObject.parseObject(action(loginApi));
+        System.out.println(result);
+        Integer code = result.getInteger("code");
+        String msg = result.getString("msg");
 
-//                MyWebSocketClient.connect(ip, port, user.getUsername());
-            } else if (code == 500) {
-                DialogUtil.error(msg);
+        if (code == 200) {
+            String token = result.getString("data");
+            Storage.token = token;
+
+            System.out.println(Storage.token);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/ChatLayout.fxml"));
+            Parent chatParent = null;
+            try {
+                chatParent = (Pane) fxmlLoader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+            Stage chatStage = new Stage();
+            chatStage.setWidth(1000);
+            chatStage.setHeight(650);
+            Scene scene = new Scene(chatParent);
+            chatStage.setScene(scene);
+            chatStage.getIcons().add(new Image(getClass().getClassLoader().getResource("images/icon/wx.png").toString()));
+            chatStage.setTitle("EasyChat0.0.3");
+            chatStage.setOnCloseRequest(e -> {
+                System.out.println("聊天窗口被关闭");
+            });
+            Storage.stageViews.put("chatStage", chatStage);
+            Stage loginStage = Storage.stageViews.get("loginStage");
+            loginStage.close();
+            chatStage.show();
+
+//            MyWebSocketClient.connect(ip, port, user.getUsername());
+        }else if (code == 500){
+            DialogUtil.error(msg);
         }
+
     }
 
     //注册
     public void register() {
-        User user = check();
-        if (user!=null) {
-            String registerApi = "http://" + ip + ":" + port+"/user/add";
-            String registerResultStr = HttpUtil.post(registerApi, JSONObject.toJSONString(user));
-            JSONObject result = JSONObject.parseObject(registerResultStr);
-            Integer code = result.getInteger("code");
-            String msg = result.getString("msg");
+        ip = ipTextfield.getText().trim();
+        port = portTextfield.getText().trim();
+        String loginApi = "http://" + ip + ":" + port + "/user/add";
+        JSONObject result = JSONObject.parseObject(action(loginApi));
+        System.out.println(result);
+        Integer code = result.getInteger("code");
+        String msg = result.getString("msg");
+        if (code == 200) {
             User u = JSONObject.parseObject(result.getJSONObject("data").toJSONString(), User.class);
-            if (code == 200) {
-                DialogUtil.info("注册成功,可以登录了");
-                String notes = "您申请的账号:" + u.getUsername() + "密码:" + u.getPassword();
-                noteLabel.setText(notes);
-            } else if (code == 500) {
-                DialogUtil.error(msg);
-            }
+            DialogUtil.info("注册成功,可以登录了");
+            String notes = "您申请的账号:" + u.getUsername() + "密码:" + u.getPassword();
+            noteLabel.setText(notes);
+        }else if (code == 500){
+            DialogUtil.error(msg);
         }
+
     }
 
     //网络检测
-    public void testConnect() throws IOException {
+    public void testConnect() {
         String notes = noteLabel.getText().trim();
         String username = usernameTextfield.getText().trim();
         String password = passwordField.getText().trim();
@@ -120,10 +148,9 @@ public class LoginController implements Initializable,TaskOk{
 
     //测试
     public void test() {
-        String fileName = StrUtil.subAfter(imageViewHead.getImage().impl_getUrl(),"images/hzw/",true);
-        System.out.println(fileName);
-        System.out.println(getClass().getClassLoader().getResource("images/hzw/"));
+        System.out.println("测试按钮被点击了");
     }
+
     @Override
     public void changeHead(Image image) {
 
@@ -136,48 +163,39 @@ public class LoginController implements Initializable,TaskOk{
     public void testConnect(Boolean isCanConnect) {
         this.isCanConnect = isCanConnect;
         noteLabel.setText(isCanConnect ? "连接成功" : "连接失败");
-        if (isCanConnect) {
-            DialogUtil.info("连接成功");
-        } else {
-            DialogUtil.error("网络不可用");
-        }
+//        if (isCanConnect) {
+//            DialogUtil.info("连接成功");
+//        } else {
+//            DialogUtil.error("网络不可用");
+//        }
     }
 
     //参数检测
-    private User check() {
-        if (isCanConnect == null) {
-            DialogUtil.info("请先检测网络状况");
-            return null;
-        } else if (!isCanConnect) {
-            DialogUtil.error("网络不可用");
-            return null;
-        } else {
-            String username = usernameTextfield.getText().trim();
-            String password = passwordField.getText().trim();
-            if (username.trim().length() < 2) {
-                DialogUtil.info("用户名最短2位,密码最短4位");
-                return null;
-            } else if (password.trim().length() < 4) {
-                DialogUtil.info("用户名最短2位,密码最短4位");
-                return null;
-            } else {
-                String fileName = StrUtil.subAfter(imageViewHead.getImage().impl_getUrl(),"images/hzw/",true);
-                String ip = IPUtil.getIp();
-                return new User()
-                        .setUsername(username)
-                        .setPassword(password)
-                        .setHeadUrl(fileName)
-                        .setIp(ip)
-                        .setAddress(IPUtil.getAddress(ip))
-                        .setCreateDate(new Date());
+    private String action(String api) {
+        String username = usernameTextfield.getText().trim();
+        String password = passwordField.getText().trim();
+        if (username.trim().length() < 2 || password.trim().length() < 4) {
+            noteLabel.setText("用户名最短2位,密码最短4位");
+            return "{\"code\":500,\"msg\":\"用户名最短2位,密码最短4位\"}";
+        }else {
+            String fileName = StrUtil.subAfter(imageViewHead.getImage().impl_getUrl(), "images/hzw/", true);
+            User user = new User().setUsername(username).setPassword(password).setHeadUrl(fileName).setCreateDate(new Date());
+            String resultStr = "";
+            try {
+                resultStr = HttpUtil.post(api, JSONObject.toJSONString(user));
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                noteLabel.setText("网络异常,请确认IP和端口");
+                return "{\"code\":500,\"msg\":\"网络异常,请确认IP和端口\"}";
             }
+            return resultStr;
         }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        loginController = this;
-        Storage.controllers.put("loginController",this);
+        Storage.controllers.put("loginController", this);
         imageViewHead.setOnMouseClicked((event) -> {
             try {
                 Stage secondStage = new Stage();//创建舞台
@@ -190,7 +208,7 @@ public class LoginController implements Initializable,TaskOk{
                 secondStage.setScene(scene);
                 secondStage.initModality(Modality.APPLICATION_MODAL);
                 Stage loginStage = (Stage) Storage.stageViews.get("loginStage");
-                secondStage.setX(loginStage.getX()+loginStage.getWidth()-5);
+                secondStage.setX(loginStage.getX() + loginStage.getWidth() - 5);
                 secondStage.setY(loginStage.getY());
                 secondStage.showAndWait();
             } catch (IOException e) {

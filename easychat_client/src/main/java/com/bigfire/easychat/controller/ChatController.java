@@ -18,4 +18,15 @@ public class ChatController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+    public void sendButtonAction(){
+        System.out.println("sendButtonAction被点击");
+    }
+    public void sendMethod(){
+        System.out.println("sendButtonAction被点击");
+    }
+    public void closeApplication(){
+        System.out.println("sendButtonAction被点击");
+    }
+
 }

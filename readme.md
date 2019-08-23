@@ -18,3 +18,4 @@ https://github.com/dahuoyzs/EasyChat.git
 - Jdk8+
 - Maven
 - Lombok（重要）
+

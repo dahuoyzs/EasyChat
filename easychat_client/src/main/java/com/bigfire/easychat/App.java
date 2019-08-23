@@ -1,7 +1,6 @@
 package com.bigfire.easychat;
 
 import com.bigfire.easychat.util.Storage;
-import com.bigfire.easychat.websoket.MyWebSocketClient;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -22,9 +21,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Storage.stageViews.put("loginStage",primaryStage);
-        primaryStage.setTitle("easyChat1.0");
-        primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResource("images/new/icon.jpg").toString()));
+
+        primaryStage.setTitle("EasyChat0.0.3");
+        primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResource("images/icon/wx.png").toString()));
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/LoginLayout.fxml"));
         Scene mainScene = new Scene(root, 504, 400);
@@ -32,7 +31,7 @@ public class App extends Application {
         primaryStage.setResizable(false);
         primaryStage.setScene(mainScene);
         primaryStage.show();
-
+        Storage.stageViews.put("loginStage",primaryStage);
         primaryStage.setOnCloseRequest(e -> {
             Platform.exit();
             System.exit(0);
