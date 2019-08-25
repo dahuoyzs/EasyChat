@@ -1,8 +1,10 @@
 package com.bigfire.easychat.controller;
 
+import com.bigfire.easychat.entity.Cmd;
 import com.bigfire.easychat.entity.Msg;
 import com.bigfire.easychat.entity.User;
 import com.bigfire.easychat.entity.response.Result;
+import com.bigfire.easychat.service.CmdService;
 import com.bigfire.easychat.service.MsgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,10 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cmd")
 public class CmdController {
     @Autowired
-    MsgService msgService;
+    CmdService cmdService;
     @PostMapping("/send")
-    public Result<User> msgSend(@RequestBody Msg msg){
-        msgService.sendMsg(msg);//发信
+    public Result<User> msgSend(@RequestBody Cmd msg){
+        cmdService.sendCmd(msg);//发命令
         return Result.getMsgResult("发送成功");
     }
 }

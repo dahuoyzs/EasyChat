@@ -7,6 +7,7 @@
     <groupId>com.bigfire</groupId>
     <artifactId>easychat_client</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -31,14 +32,15 @@
         </dependency>
         <!-- jfoenix -->
         <!--<dependency>-->
-            <!--<groupId>com.jfoenix</groupId>-->
-            <!--<artifactId>jfoenix</artifactId>-->
-            <!--<version>8.0.8</version>-->
+        <!--<groupId>com.jfoenix</groupId>-->
+        <!--<artifactId>jfoenix</artifactId>-->
+        <!--<version>8.0.8</version>-->
         <!--</dependency>-->
+        <!--hutool-->
         <dependency>
             <groupId>cn.hutool</groupId>
-            <artifactId>hutool-http</artifactId>
-            <version>4.6.2</version>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.13</version>
         </dependency>
         <!--fastjson-->
         <dependency>
@@ -46,15 +48,24 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.58</version>
         </dependency>
-
-
-
-
+        <!-- slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.26</version>
+        </dependency>
+        <!-- logback -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
 
 
     </dependencies>
 
     <build>
+        <finalName>easychat</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

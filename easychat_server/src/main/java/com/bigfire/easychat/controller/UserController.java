@@ -23,22 +23,22 @@ public class UserController {
     UserService userService;
     @GetMapping("/list")
     public Result<List<User>> userList(){
-        return userService.listResult();
+        return userService.list();
     }
     @PostMapping("/add")
     public Result<User> userAdd(@RequestBody User user){
-        return userService.userAddResult(user);
+        return userService.userRegister(user);
     }
-    @GetMapping("/find/{username}")
+    @PostMapping("/find/{username}")
     public Result<User> userAdd(@PathVariable String username){
-        return userService.findByUsernameResult(username);
+        return userService.findByUsername(username);
     }
     @PostMapping("/login")
     public Result<User> login(@RequestBody User user){
-        return userService.loginResult(user);
+        return userService.login(user);
     }
-//    @PostMapping("/logout")
-//    public Result<User> logout(@RequestBody User user){
-//        return userService.logoutResult(user);
-//    }
+    @PostMapping("/logout")
+    public Result<User> logout(@RequestBody User user){
+        return userService.logout(user);
+    }
 }

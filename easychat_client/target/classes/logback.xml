@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径
+    总结
+文件相对保存路径设置可分以下三种：
+1. value=“logs” – 表示保存到程序运行目录，在tomcat中为bin目录
+2. value=“/logs” – 表示保存到系统目录
+3. value=“../logs” – 表示保存到程序运行目录的父目录
+    -->
+    <property name="LOG_HOME" value="logs" />
+    <property name="LOG_NAME" value="log" />
+
+
+
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!--<PatternLayout pattern="${CONSOLE_LOG_PATTERN}"/>-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符  (%L\)-->
+            <pattern>%d [%thread] %-5level %logger{0}.%method\(%logger{0}.java:%L\)->%msg%n</pattern>
+            <!-- 2019-08-06 16:03:41,197 [main] INFO  com.bigfire.app.util.StrUtil.main(StrUtil.java:31)->info
+         -->
+            <!--<pattern>%d [%thread] %-5level %caller{1}->%msg%n</pattern>
+            2019-08-06 16:12:27,597 [main] INFO  Caller+0	 at com.bigfire.app.util.StrUtil.main(StrUtil.java:31)
+            ->info
+            -->
+        </encoder>
+    </appender>
+    <!-- 按照每天生成日志文件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名-->
+            <FileNamePattern>${LOG_HOME}/${LOG_NAME}%d{yyyy-MM-dd}.log</FileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %c{50}->%msg%n</pattern>
+        </encoder>
+        <!--日志文件最大的大小-->
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>20MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <!-- 日志输出级别-->
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
+
+
+        <!--
+        文件自动扫描
+        logback.groovy
+        logback-test.xml
+        logback.xml
+        【包名输出格式写法】
+        c {length }
+        lo {length }
+        logger {length }
+        输出日志的logger名，可有一个整形参数，功能是缩短logger名，设置为0表示只输入logger最右边点符号之后的字符串。 Conversion specifier Logger name Result
+        %logger	    com.fire.common.Test	com.fire.common.Test
+        %logger{0}	com.fire.common.Test	Test
+        %logger{5}	com.fire.common.Test	c.f.c.Test
+        %logger{10}	com.fire.common.Test	c.f.c.Test
+        %logger{15}	com.fire.common.Test	c.f.common.Test
+        %logger{16}	com.fire.common.Test	c.fire.common.Test
+        %logger{26}	com.fire.common.Test	com.fire.common.Test
+        【注意区分】大消息%C是类名
+        C {length }
+        class {length }	输出执行记录请求的调用者的全限定名。参数与上面的一样。尽量避免使用，除非执行速度不造成任何问题。
+        contextName
+        cn	输出上下文名称。
+        d {pattern }
+        【时间格式】
+        date {pattern }	输出日志的打印日志，模式语法与java.text.SimpleDateFormat 兼容。 Conversion Pattern Result
+        %d	                                2006-10-20 14:06:49,812
+        %date	                            2006-10-20 14:06:49,812
+        %date{ISO8601}	                    2006-10-20 14:06:49,812
+        %date{HH:mm:ss.SSS}	                14:06:49.812
+        %date{dd MMM yyyy ;HH:mm:ss.SSS}	20 oct. 2006;14:06:49.812
+        【文件】
+        F / file	输出执行记录请求的java源文件名。尽量避免使用，除非执行速度不造成任何问题。
+        caller{depth} caller{depth, evaluator-1, ... evaluator-n}	输出生成日志的调用者的位置信息，整数选项表示输出信息深度。
+        例如， %caller{2}   输出为：
+
+        0    [main] DEBUG - logging statement
+        Caller+0   at com.fire.common.Test.sampleMethodName(Bar.java:22)
+        Caller+1   at com.fire.common.Test.createLoggingRequest(Bar.java:17)
+        例如， %caller{3}   输出为：
+
+        16   [main] DEBUG - logging statement
+        Caller+0   at com.fire.common.Test.sampleMethodName(Bar.java:22)
+        Caller+1   at com.fire.common.Test.createLoggingRequest(Bar.java:17)
+        Caller+2   at mainPackage.ConfigTester.main(ConfigTester.java:38)
+        L / line	输出执行日志请求的行号。尽量避免使用，除非执行速度不造成任何问题。
+        m / msg / message
+        输出应用程序提供的信息。
+
+        M / method	输出执行日志请求的方法名。尽量避免使用，除非执行速度不造成任何问题。
+        n	输出平台先关的分行符“\n”或者“\r\n”。
+        p / le / level	输出日志级别。
+        r / relative	输出从程序启动到创建日志记录的时间，单位是毫秒
+        t / thread	输出产生日志的线程名。
+        replace(p ){r, t}
+        p 为日志内容，r 是正则表达式，将p 中符合r 的内容替换为t 。
+        例如， "%replace(%msg){'\s', ''}"
+
+
+
+        -->

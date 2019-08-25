@@ -9,6 +9,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
+
 /**
  * @ IDE    ：IntelliJ IDEA.
  * @ Author ：dahuo.
@@ -18,8 +20,8 @@ import org.springframework.stereotype.Repository;
  * @ Desc   :
  */
 
-
-public interface UserDao extends JpaRepositoryImplementation<User, Long> {
+@Repository
+public interface UserDao extends JpaRepository<User, Long> {
     User findByUsername(String username);
     @Modifying
     @Query("update User u set u.headUrl = :headUrl where u.id = :userId")

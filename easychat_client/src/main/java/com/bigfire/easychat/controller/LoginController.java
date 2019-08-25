@@ -1,6 +1,7 @@
 package com.bigfire.easychat.controller;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.http.HttpException;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.bigfire.easychat.entity.User;
@@ -38,7 +39,7 @@ import java.util.ResourceBundle;
  * @ Email  ：835476090@qq.com
  * @ Desc   :
  */
-
+@Slf4j
 public class LoginController implements Initializable, TaskOk {
     @FXML
     Label noteLabel;
@@ -64,20 +65,21 @@ public class LoginController implements Initializable, TaskOk {
         ip = ipTextfield.getText().trim();
         port = portTextfield.getText().trim();
         String loginApi = "http://" + ip + ":" + port + "/user/login";
-        JSONObject result = JSONObject.parseObject(action(loginApi));
-        System.out.println(result);
-        Integer code = result.getInteger("code");
-        String msg = result.getString("msg");
+        JSONObject loginResult = JSONObject.parseObject(action(loginApi));
+        System.out.println(loginResult);
+        Integer loginCode = loginResult.getInteger("code");
+        String loginMsg = loginResult.getString("msg");
 
-        if (code == 200) {
-            String token = result.getString("data");
+        if (loginCode == 200) {
+
+            String token = loginResult.getString("data");
             Storage.token = token;
-
-            System.out.println(Storage.token);
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/ChatLayout.fxml"));
+            Storage.ip = ip;
+            Storage.port = port;
+//            System.out.println(Storage.token);
             Parent chatParent = null;
             try {
-                chatParent = (Pane) fxmlLoader.load();
+                chatParent = FXMLLoader.load(getClass().getClassLoader().getResource("views/ChatLayout.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -89,16 +91,28 @@ public class LoginController implements Initializable, TaskOk {
             chatStage.getIcons().add(new Image(getClass().getClassLoader().getResource("images/icon/wx.png").toString()));
             chatStage.setTitle("EasyChat0.0.3");
             chatStage.setOnCloseRequest(e -> {
-                System.out.println("聊天窗口被关闭");
+                try{
+                    User user = Storage.onlineUser;
+                    String logoutApi = "http://" + ip + ":" + port + "/user/logout";
+                    String resultStr = HttpUtil.post(logoutApi,JSONObject.toJSONString(user));
+                    JSONObject logoutResult = JSONObject.parseObject(resultStr);
+                    Integer logoutCode = logoutResult.getInteger("code");
+                    String logoutMsg = logoutResult.getString("msg");
+                    if (loginCode==200){//退出成功
+                        log.info("安全退出");
+                    }else DialogUtil.error(loginMsg);
+                }catch (Exception exception){
+                    log.error("不正常的退出{}",exception.getMessage());
+                }
             });
             Storage.stageViews.put("chatStage", chatStage);
             Stage loginStage = Storage.stageViews.get("loginStage");
             loginStage.close();
             chatStage.show();
 
-//            MyWebSocketClient.connect(ip, port, user.getUsername());
-        }else if (code == 500){
-            DialogUtil.error(msg);
+
+        }else if (loginCode == 500){
+            DialogUtil.error(loginMsg);
         }
 
     }
@@ -109,7 +123,7 @@ public class LoginController implements Initializable, TaskOk {
         port = portTextfield.getText().trim();
         String loginApi = "http://" + ip + ":" + port + "/user/add";
         JSONObject result = JSONObject.parseObject(action(loginApi));
-        System.out.println(result);
+        log.info(result.toJSONString());
         Integer code = result.getInteger("code");
         String msg = result.getString("msg");
         if (code == 200) {
@@ -131,7 +145,7 @@ public class LoginController implements Initializable, TaskOk {
         String ip = ipTextfield.getText().trim();
         String port = portTextfield.getText().trim();
         StringBuilder sb = new StringBuilder().append("notes:").append(notes).append("，").append("username:").append(username).append("，").append("password:").append(password).append("，").append("ip:").append(ip).append("，").append("port:").append(port).append("\n");
-        System.out.println(sb.toString());
+        log.info(sb.toString());
         Boolean isIp = IPUtil.isIP(ip);
         Boolean isPort = IPUtil.isPort(port);
         if ((isIp && isPort) || (isPort && ip.equals("localhost"))) {//合法得ip和端口
@@ -148,7 +162,7 @@ public class LoginController implements Initializable, TaskOk {
 
     //测试
     public void test() {
-        System.out.println("测试按钮被点击了");
+        log.info("测试按钮被点击了");
     }
 
     @Override
@@ -180,11 +194,12 @@ public class LoginController implements Initializable, TaskOk {
         }else {
             String fileName = StrUtil.subAfter(imageViewHead.getImage().impl_getUrl(), "images/hzw/", true);
             User user = new User().setUsername(username).setPassword(password).setHeadUrl(fileName).setCreateDate(new Date());
+            Storage.onlineUser = user;//
             String resultStr = "";
             try {
-                resultStr = HttpUtil.post(api, JSONObject.toJSONString(user));
+                resultStr = HttpUtil.post(api, JSONObject.toJSONString(user));//post请求
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                log.error(e.getMessage());
                 noteLabel.setText("网络异常,请确认IP和端口");
                 return "{\"code\":500,\"msg\":\"网络异常,请确认IP和端口\"}";
             }
@@ -194,16 +209,13 @@ public class LoginController implements Initializable, TaskOk {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        loginController = this;
         Storage.controllers.put("loginController", this);
         imageViewHead.setOnMouseClicked((event) -> {
             try {
                 Stage secondStage = new Stage();//创建舞台
                 secondStage.setTitle("选择头像");
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/HeadList.fxml"));
-
                 Scene scene = new Scene(root, 300, 300);//创建场景
-
                 secondStage.setResizable(false);
                 secondStage.setScene(scene);
                 secondStage.initModality(Modality.APPLICATION_MODAL);
@@ -213,6 +225,12 @@ public class LoginController implements Initializable, TaskOk {
                 secondStage.showAndWait();
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+        });
+        passwordField.setOnKeyPressed(e->{
+            String keyName = e.getCode().getName();
+            if (keyName.equals("Enter")){
+                login();
             }
         });
     }

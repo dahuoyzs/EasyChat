@@ -78,9 +78,9 @@ public class IPUtil {
         return StrUtil.getBetweenfirst(HttpUtil.gbkGet(ipToAddrUrl),"location\":\"","\",\"");
     }
 
-    public static void main(String[] args) {
-        System.out.println(getIp());//180.168.253.65
-        System.out.println(getAddress(getIp()));//上海市浦东新区 电信
-    }
+//    public static void main(String[] args) {
+//        System.out.println(getIp());//180.168.253.65
+//        System.out.println(getAddress(getIp()));//上海市浦东新区 电信
+//    }
 
 }

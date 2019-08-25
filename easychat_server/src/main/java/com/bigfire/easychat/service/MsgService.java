@@ -22,9 +22,9 @@ public class MsgService {
         if (msg!=null){
             String username = msg.getToUsername();
             if (username!=null){
-                webSocketServer.sendMessage(username, JSONObject.toJSONString(Result.getSuccessResult(msg)));
+                webSocketServer.sendMessage(username, JSONObject.toJSONString(Result.getCodeResult(101,"msg",msg)));
             }else {
-                webSocketServer.sendInfo(JSONObject.toJSONString(Result.getSuccessResult(msg)));
+                webSocketServer.sendMessageAll(JSONObject.toJSONString(Result.getCodeResult(101,"msg",msg)));
             }
         }
     }

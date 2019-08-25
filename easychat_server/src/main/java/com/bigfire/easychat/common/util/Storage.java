@@ -1,5 +1,7 @@
 package com.bigfire.easychat.common.util;
 
+import cn.hutool.cache.impl.TimedCache;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -11,6 +13,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @ Desc   :
  */
 public class Storage {
-    public static ConcurrentHashMap<String,String> userOnline = new ConcurrentHashMap<>();
+    public static TimedCache<String,String> onlineTokens = new TimedCache<>(30 * 1000);//测试时用10秒
+
+//    public static TimedCache<String,String> onlineTokens = new TimedCache<>(24 * 60 * 60 * 1000);//默认一个小时
 
 }

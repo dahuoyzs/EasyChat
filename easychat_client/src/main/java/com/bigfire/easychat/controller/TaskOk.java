@@ -1,6 +1,9 @@
 package com.bigfire.easychat.controller;
 
+import com.bigfire.easychat.entity.User;
 import javafx.scene.image.Image;
+
+import java.util.List;
 
 /**
  * @ IDE    ：IntelliJ IDEA.
@@ -13,4 +16,5 @@ import javafx.scene.image.Image;
 public interface TaskOk {
     void testConnect(Boolean isCanConnect);
     void changeHead(Image image);
+
 }

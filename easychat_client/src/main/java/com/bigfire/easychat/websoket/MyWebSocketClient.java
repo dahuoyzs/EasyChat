@@ -2,16 +2,24 @@ package com.bigfire.easychat.websoket;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Iterator;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.bigfire.easychat.controller.ChatController;
 import com.bigfire.easychat.controller.LoginController;
 import com.bigfire.easychat.controller.TaskOk;
+import com.bigfire.easychat.entity.Cmd;
+import com.bigfire.easychat.entity.Msg;
+import com.bigfire.easychat.entity.User;
+import com.bigfire.easychat.util.DialogUtil;
 import com.bigfire.easychat.util.Storage;
+import lombok.extern.slf4j.Slf4j;
 import org.java_websocket.WebSocket;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @ IDE    ：IntelliJ IDEA.
@@ -21,15 +29,16 @@ import org.java_websocket.handshake.ServerHandshake;
  * @ Email  ：835476090@qq.com
  * @ Desc   :
  */
+@Slf4j
 public class MyWebSocketClient extends WebSocketClient {
-
+//    Logger logger = LoggerFactory.getLogger(MyWebSocketClient.class);
     public MyWebSocketClient(String url) throws URISyntaxException {
         super(new URI(url));
     }
 
     @Override
     public void onOpen(ServerHandshake shake) {//已经握手,建立连接成功
-        System.out.println("onOpen()");
+        log.info("onOpen()");
 //        for(Iterator<String> it=shake.iterateHttpFields();it.hasNext();) {
 //            String key = it.next();
 //            System.out.println(key+":"+shake.getFieldValue(key));
@@ -37,20 +46,49 @@ public class MyWebSocketClient extends WebSocketClient {
     }
 
     @Override
-    public void onMessage(String paramString) {
-        System.out.println("接收到消息：" + paramString);
+    public void onMessage(String resultStr) {
+        log.info("接收到消息：" + resultStr);
+        JSONObject result = JSONObject.parseObject(resultStr);
+        Integer code = result.getInteger("code");
+        String note = result.getString("msg");
+
+        ChatController chatController = (ChatController) Storage.controllers.get("chatController");
+        if (code==100){//用户列表
+//            String data = result.getJSONArray("data");
+            JSONArray jsonArray = result.getJSONArray("data");
+            log.info("【onlineUsers】",jsonArray);
+            ArrayList<User> users = new ArrayList<>();
+
+            for (int i = 0; i < jsonArray.size(); i++) {
+                users.add(jsonArray.getJSONObject(i).toJavaObject(User.class));
+            }
+            Storage.onlineUsers = users;
+            chatController.updateUserList(users);
+        }else if (code==101){//消息
+            JSONObject data = result.getJSONObject("data");
+            log.info("【msg】{}",data);
+            Msg msg = data.toJavaObject(Msg.class);
+            chatController.updateMsg(msg);
+        }else if (code==102){//cmd
+            JSONObject data = result.getJSONObject("data");
+            log.info("【cmd】{}",data);
+            Cmd cmd = data.toJavaObject(Cmd.class);
+            chatController.updateCmd(cmd);
+        }else {//未知信息
+            DialogUtil.error(note);
+        }
 
     }
 
     @Override
     public void onClose(int paramInt, String paramString, boolean paramBoolean) {
-        System.out.println("关闭...");
+        log.info("关闭...");
         running = false;
     }
 
     @Override
     public void onError(Exception e) {
-        System.out.println("异常" + e);
+        log.error("异常" + e);
         running = false;
     }
     public static Boolean running = true;
@@ -93,35 +131,4 @@ public class MyWebSocketClient extends WebSocketClient {
             e.printStackTrace();
         }
     }
-
-    //    public static MyWebSocketClient listener(String ip,String port){
-//        try {
-//            MyWebSocketClient client = icon MyWebSocketClient("ws://"+ip+":"+port+"/websocket");
-//            client.connect();
-//
-//            single = client;
-//            return client;
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
-    public static void main(String[] args) {
-        testConnect("localhost", "8080");
-//        System.out.println(listener("localhost", "8080"));
-    }
-//    public static void main(String[] args) {
-//        try {
-//            MyWebSocketClient client = icon MyWebSocketClient("ws://localhost:8080/websocket");
-//            client.connect();
-//            while (!client.getReadyState().equals(WebSocket.READYSTATE.OPEN)) {
-//                System.out.println("还没有打开");
-//            }
-//            System.out.println("建立websocket连接");
-//            client.send("asd");
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
 }

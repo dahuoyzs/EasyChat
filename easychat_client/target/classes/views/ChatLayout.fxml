@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import java.lang.String?>
 
-<BorderPane fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bigfire.easychat.controller.ChatController">
+<BorderPane background="#eee" fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bigfire.easychat.controller.ChatController">
    <center>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <children>
@@ -24,11 +24,11 @@
             </ScrollPane>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" VBox.vgrow="NEVER">
                <children>
-                  <TextArea fx:id="messageBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" onKeyPressed="#sendMethod" prefHeight="16.0" prefWidth="698.0" promptText="Enter Message..." scaleShape="false" HBox.hgrow="ALWAYS">
+                  <TextField fx:id="messageBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT"  prefHeight="16.0" prefWidth="698.0" promptText="输入要发送的消息" scaleShape="false" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
-                  </TextArea>
+                  </TextField>
                   <Button fx:id="buttonSend" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sendButtonAction" prefHeight="43.0" prefWidth="140.0" scaleShape="false" text="发送" textAlignment="CENTER" HBox.hgrow="NEVER" />
                   <!--<Button fx:id="recordBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMousePressed="#recordVoiceMessage" />-->
                </children>

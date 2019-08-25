@@ -1,11 +1,13 @@
 package com.bigfire.easychat.util;
 
+import com.bigfire.easychat.entity.User;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -21,6 +23,9 @@ public class Storage {
     public static ConcurrentHashMap<String, Object> controllers = new ConcurrentHashMap();
     public static ConcurrentHashMap<String, Stage> stageViews = new ConcurrentHashMap();
     public static String token;
-
+    public static User onlineUser;
+    public static List<User> onlineUsers;
+    public static String ip;
+    public static String port;
 
 }

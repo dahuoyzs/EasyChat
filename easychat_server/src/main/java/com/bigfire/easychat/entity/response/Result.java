@@ -22,16 +22,16 @@ public class Result<T> {
     private  T data;
     private String time;
     public Result(){
-        setTime(LocalDateTime.now().toString());
+        setTime(LocalDateTime.now().toString().replace("T",""));
     }
     public Result(Integer code){
-        setCode(code).setTime(LocalDateTime.now().toString());
+        setCode(code).setTime(LocalDateTime.now().toString().replace("T",""));
     }
     public Result(Integer code,String msg){
-        setCode(code).setMsg(msg).setTime(LocalDateTime.now().toString());
+        setCode(code).setMsg(msg).setTime(LocalDateTime.now().toString().replace("T",""));
     }
     public Result(Integer code,String msg,T data){
-        setCode(code).setMsg(msg).setData(data).setTime(LocalDateTime.now().toString());
+        setCode(code).setMsg(msg).setData(data).setTime(LocalDateTime.now().toString().replace("T",""));
     }
     private static final int SUCCESS_CODE = 200;
     private static final int ERROR_CODE = 500;

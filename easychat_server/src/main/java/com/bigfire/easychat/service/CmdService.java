@@ -2,7 +2,6 @@ package com.bigfire.easychat.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bigfire.easychat.entity.Cmd;
-import com.bigfire.easychat.entity.Msg;
 import com.bigfire.easychat.entity.response.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,9 +22,9 @@ public class CmdService {
         if (cmd!=null){
             String username = cmd.getToUsername();
             if (username!=null){
-                webSocketServer.sendMessage(username, JSONObject.toJSONString(Result.getSuccessResult(cmd)));
+                webSocketServer.sendMessage(username, JSONObject.toJSONString(Result.getCodeResult(102,"cmd",cmd)));
             }else {
-                webSocketServer.sendInfo(JSONObject.toJSONString(Result.getSuccessResult(cmd)));
+                webSocketServer.sendMessageAll(JSONObject.toJSONString(Result.getCodeResult(102,"cmd",cmd)));
             }
         }
     }

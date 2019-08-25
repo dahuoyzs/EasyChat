@@ -21,7 +21,7 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "head")
+//@Table(name = "head")
 public class Head {
     @Id
     Long id;

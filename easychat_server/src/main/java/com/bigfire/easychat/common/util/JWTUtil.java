@@ -86,13 +86,13 @@ public class JWTUtil {
             return map;
         }
     }
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        String data = "10086";
 //        String token = createToken(data);
 //        System.out.println(token);
-        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMTAwODYiLCJpc3MiOiJpc3NfdXNlciIsInR5cCI6IkpXVCIsImV4cCI6MTU2NjU2NDc1MCwiYWxnIjoiSFMyNTYifQ.TPVU7OfuIdNEEZcvRdA08eyqQ5u-bKZne5_UgDX5DmA";
-        String value = getValueFromToken(token);
-        System.out.println(value);
-    }
+//        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiMTAwODYiLCJpc3MiOiJpc3NfdXNlciIsInR5cCI6IkpXVCIsImV4cCI6MTU2NjU2NDc1MCwiYWxnIjoiSFMyNTYifQ.TPVU7OfuIdNEEZcvRdA08eyqQ5u-bKZne5_UgDX5DmA";
+//        String value = getValueFromToken(token);
+//        System.out.println(value);
+//    }
 
 }

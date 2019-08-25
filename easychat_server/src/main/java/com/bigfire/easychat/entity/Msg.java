@@ -5,8 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Entity;
-
 /**
  * @ IDE    ：IntelliJ IDEA.
  * @ Author ：dahuo.
@@ -21,10 +19,6 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 public class Msg {
     String fromUsername;
-    String fromIp;
-    String fromAddress;
     String toUsername;//如果username未空时，则广播发送给没一共客户端
-    String toIp;
-    String toAddress;
     String msg;
 }

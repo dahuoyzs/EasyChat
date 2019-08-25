@@ -1,11 +1,13 @@
 package com.bigfire.easychat.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -24,16 +26,15 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
-
     String username;
     String password;
-    Integer sex;
     String headUrl;
-    String ip;
-    String address;
+    String ip = "";
+    String address = "";
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     Date createDate;
 }

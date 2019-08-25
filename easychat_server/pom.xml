@@ -58,7 +58,7 @@
         <!--hutool-->
         <dependency>
             <groupId>cn.hutool</groupId>
-            <artifactId>hutool-http</artifactId>
+            <artifactId>hutool-all</artifactId>
             <version>4.5.13</version>
         </dependency>
         <!--java-jwt-->
