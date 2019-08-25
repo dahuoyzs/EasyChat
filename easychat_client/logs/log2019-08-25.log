@@ -423,3 +423,94 @@ ssss
 2019-08-25 14:58:34.409 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"dsa","fromUsername":"dahuo"}
 2019-08-25 14:58:34.415 [Thread-9] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: dsa
 2019-08-25 15:04:00.768 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 16:12:38.430 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 16:12:39.066 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController->{"msg":"成功","code":200,"data":{"password":"1234","address":"","ip":"","headUrl":"hzwa.png","id":1,"username":"dahuo","createDate":"2019-08-25 08:12:38"},"time":"2019-08-2516:12:38.983"}
+2019-08-25 16:12:41.668 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 16:12:41.981 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2516:12:41.820"}
+2019-08-25 16:12:41.982 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 16:19:24.162 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 16:19:24.462 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 16:19:24.471 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2516:19:24.465"}
+2019-08-25 16:19:24.472 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 16:19:29.145 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController->安全退出
+2019-08-25 16:41:48.279 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 16:41:48.598 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 16:41:48.638 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2516:41:48.604"}
+2019-08-25 16:41:48.641 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 16:44:46.666 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController->安全退出
+2019-08-25 16:45:50.430 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 16:45:50.736 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 16:45:50.743 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2516:45:50.736"}
+2019-08-25 16:45:50.744 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 16:50:41.690 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 16:50:42.015 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 16:50:42.021 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2516:50:42.015"}
+2019-08-25 16:50:42.023 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 16:50:55.226 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController->安全退出
+2019-08-25 19:08:07.857 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 19:08:08.187 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 19:08:08.193 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2519:08:08.187"}
+2019-08-25 19:08:08.195 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 19:08:21.457 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"dahuo"},"msg":"msg","time":"2019-08-2519:08:21.444"}
+2019-08-25 19:08:21.458 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"dahuo","fromUsername":"dahuo"}
+2019-08-25 19:08:21.468 [Thread-8] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: dahuo
+2019-08-25 19:08:23.650 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"哈哈"},"msg":"msg","time":"2019-08-2519:08:23.650"}
+2019-08-25 19:08:23.651 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"哈哈","fromUsername":"dahuo"}
+2019-08-25 19:08:23.655 [Thread-9] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: 哈哈
+2019-08-25 19:09:06.577 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":102,"data":{"action":"未知命令在所有平台都执行吧","cmd":"cmd /c start ibigfire.cn","fromUsername":"dahuo","type":1},"msg":"cmd","time":"2019-08-2519:09:06.573"}
+2019-08-25 19:09:06.578 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【cmd】{"action":"未知命令在所有平台都执行吧","cmd":"cmd /c start ibigfire.cn","type":1,"fromUsername":"dahuo"}
+2019-08-25 19:11:31.450 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 19:11:31.771 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 19:11:31.778 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2519:11:31.771"}
+2019-08-25 19:11:31.780 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 19:11:41.479 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"123","toUsername":"dahuo"},"msg":"msg","time":"2019-08-2519:11:41.478"}
+2019-08-25 19:11:41.480 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"123","toUsername":"dahuo","fromUsername":"dahuo"}
+2019-08-25 19:11:41.493 [Thread-8] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: 123
+2019-08-25 19:15:28.188 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 19:15:28.495 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 19:15:28.500 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2519:15:28.495"}
+2019-08-25 19:15:28.502 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 19:15:34.370 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"1233","toUsername":"dahuo"},"msg":"msg","time":"2019-08-2519:15:34.368"}
+2019-08-25 19:15:34.370 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"1233","toUsername":"dahuo","fromUsername":"dahuo"}
+2019-08-25 19:15:34.383 [Thread-8] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: 1233
+2019-08-25 19:16:32.666 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 19:16:32.958 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 19:16:32.964 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2519:16:32.958"}
+2019-08-25 19:16:32.965 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 19:16:35.968 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"dahuo"},"msg":"msg","time":"2019-08-2519:16:35.967"}
+2019-08-25 19:16:35.969 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"dahuo","fromUsername":"dahuo"}
+2019-08-25 19:16:35.982 [Thread-8] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: dahuo
+2019-08-25 19:16:38.858 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"asdasd"},"msg":"msg","time":"2019-08-2519:16:38.857"}
+2019-08-25 19:16:38.858 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"asdasd","fromUsername":"dahuo"}
+2019-08-25 19:16:38.862 [Thread-9] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: asdasd
+2019-08-25 19:17:22.322 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 19:17:22.622 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 19:17:22.629 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2519:17:22.623"}
+2019-08-25 19:17:22.631 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 19:17:24.336 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"das"},"msg":"msg","time":"2019-08-2519:17:24.335"}
+2019-08-25 19:17:24.336 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"das","fromUsername":"dahuo"}
+2019-08-25 19:17:24.348 [Thread-8] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: das
+2019-08-25 19:17:35.983 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"dahahshd"},"msg":"msg","time":"2019-08-2519:17:35.982"}
+2019-08-25 19:17:35.983 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"dahahshd","fromUsername":"dahuo"}
+2019-08-25 19:17:35.987 [Thread-9] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: dahahshd
+2019-08-25 19:17:40.251 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":101,"data":{"fromUsername":"dahuo","msg":"123123","toUsername":"dahuo"},"msg":"msg","time":"2019-08-2519:17:40.251"}
+2019-08-25 19:17:40.252 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【msg】{"msg":"123123","toUsername":"dahuo","fromUsername":"dahuo"}
+2019-08-25 19:17:40.255 [Thread-10] DEBUG com.bigfire.easychat.controller.ChatController->dahuo: 123123
+2019-08-25 19:17:46.903 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController->安全退出
+2019-08-25 19:18:03.598 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 19:18:03.895 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 19:18:03.901 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2519:18:03.895"}
+2019-08-25 19:18:03.903 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 19:18:26.534 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":102,"data":{"action":"未知命令在所有平台都执行吧","cmd":"cmd /c start ibigfire.cn","fromUsername":"dahuo","type":1},"msg":"cmd","time":"2019-08-2519:18:26.533"}
+2019-08-25 19:18:26.534 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【cmd】{"action":"未知命令在所有平台都执行吧","cmd":"cmd /c start ibigfire.cn","type":1,"fromUsername":"dahuo"}
+2019-08-25 19:20:19.232 [JavaFX Application Thread] DEBUG cn.hutool.log.LogFactory->Use [Slf4j] Logger As Default.
+2019-08-25 19:20:19.532 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->onOpen()
+2019-08-25 19:20:19.537 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":100,"data":[{"address":"","createDate":1566720758223,"headUrl":"hzwa.png","id":1,"ip":"","password":"******","username":"dahuo"}],"msg":"onlineUserList","time":"2019-08-2519:20:19.532"}
+2019-08-25 19:20:19.539 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【onlineUsers】
+2019-08-25 19:20:49.399 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":102,"data":{"action":"未知命令在所有平台都执行吧","cmd":"start explorer ibigfire.cn","fromUsername":"dahuo","type":1},"msg":"cmd","time":"2019-08-2519:20:49.398"}
+2019-08-25 19:20:49.400 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【cmd】{"action":"未知命令在所有平台都执行吧","cmd":"start explorer ibigfire.cn","type":1,"fromUsername":"dahuo"}
+2019-08-25 19:22:58.098 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":102,"data":{"action":"未知命令在所有平台都执行吧","cmd":" cmd /c start  www.ibigfire.cn","fromUsername":"dahuo","type":1},"msg":"cmd","time":"2019-08-2519:22:58.098"}
+2019-08-25 19:22:58.099 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【cmd】{"action":"未知命令在所有平台都执行吧","cmd":" cmd /c start  www.ibigfire.cn","type":1,"fromUsername":"dahuo"}
+2019-08-25 19:23:25.482 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->接收到消息：{"code":102,"data":{"action":"未知命令在所有平台都执行吧","cmd":"cmd /c start www.ibigfire.cn","fromUsername":"dahuo","toUsername":"dahuo","type":1},"msg":"cmd","time":"2019-08-2519:23:25.481"}
+2019-08-25 19:23:25.483 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient->【cmd】{"toUsername":"dahuo","action":"未知命令在所有平台都执行吧","cmd":"cmd /c start www.ibigfire.cn","type":1,"fromUsername":"dahuo"}
+2019-08-25 19:23:53.005 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController->安全退出

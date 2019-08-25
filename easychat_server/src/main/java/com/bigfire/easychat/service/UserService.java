@@ -81,12 +81,14 @@ public class UserService {
 
     //登出
     public Result<User> logout(User user){
-        log.debug(JSONObject.toJSONString(user));
+        log.info("要退出的用户:{}",JSONObject.toJSONString(user));
         String username = user.getUsername();
         if (username==null){
             return Result.getErrorResult("要退出的用户名不能为空");
         }
         Storage.onlineTokens.remove(username);
+        log.info("tokenSize:{}",Storage.onlineTokens.size());
+        WebSocketServer.sessionMap.remove(username);
         return Result.getMsgResult("退出成功");
     };
 

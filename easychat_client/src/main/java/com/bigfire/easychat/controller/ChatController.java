@@ -1,13 +1,16 @@
 package com.bigfire.easychat.controller;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
+import cn.hutool.setting.dialect.Props;
+import cn.hutool.system.OsInfo;
 import com.alibaba.fastjson.JSONObject;
 import com.bigfire.easychat.entity.Cmd;
 import com.bigfire.easychat.entity.Msg;
 import com.bigfire.easychat.entity.User;
 
+import com.bigfire.easychat.util.DialogUtil;
 import com.bigfire.easychat.util.Storage;
-import com.bigfire.easychat.util.StrUtil;
 import com.bigfire.easychat.websoket.MyWebSocketClient;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -25,6 +28,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +46,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @Slf4j
 public class ChatController implements Initializable {
 
+    OsInfo osInfo = new OsInfo();//系统信息
     @FXML
     ImageView userImageView;
     @FXML
@@ -52,98 +57,179 @@ public class ChatController implements Initializable {
     Label onlineCountLabel;
     @FXML
     TextField messageBox;
-
     @FXML
     ListView chatPane;
+    @FXML
+    ImageView githubImageView;
+
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Storage.controllers.put("chatController", this);
-        User user =  Storage.onlineUser;
-        String ip =  Storage.ip;
-        String port =  Storage.port;
+        User user = Storage.onlineUser;
+        String ip = Storage.ip;
+        String port = Storage.port;
         String token = Storage.token;
-        System.out.println(ip+":"+port+",token:"+token);
-        userImageView.setImage(new Image(getClass().getClassLoader().getResource("images/hzw/"+user.getHeadUrl()).toString()));
+        System.out.println(ip + ":" + port + ",token:" + token);
+        userImageView.setImage(new Image(getClass().getClassLoader().getResource("images/hzw/" + user.getHeadUrl()).toString()));
         usernameLabel.setText(user.getUsername());
         MyWebSocketClient.connect(ip, port, user.getUsername());
-        messageBox.setOnKeyPressed(e->{
+        messageBox.setOnKeyPressed(e -> {
             String keyName = e.getCode().getName();
-            if (keyName.equals("Enter")){
+            if (keyName.equals("Enter")) {
                 sendButtonAction();
             }
         });
+        githubImageView.setOnMouseClicked((event) -> {
+            System.out.println("被点击了");
+            openWeb("https://github.com/dahuoyzs/EasyChat");
+
+        });
     }
-    public void sendButtonAction(){
-        String message  = messageBox.getText().trim();
-        if (message.length()<1)return;
-        System.out.println("输入内容:"+message);
-        String username = "";
-        if (message.startsWith("[") && message.contains("]")){
-            username = message.substring(1,message.indexOf("]"));
-            message = StrUtil.getRight(message,"]");
+
+    public void sendButtonAction() {
+        String message = messageBox.getText().trim();
+        if (message.length() < 1) return;
+        System.out.println("输入内容:" + message);
+
+        if (message.startsWith("##")) {//命令
+            Cmd cmd = new Cmd();
+            cmd.setFromUsername(Storage.onlineUser.getUsername());
+            cmd.setType(1);
+            cmd.setAction("全平台执行命令");
+            String cmdStr = message.substring(2);//去掉##
+            String username = "";
+            if (cmdStr.startsWith("[") && cmdStr.contains("]")) {//单发
+                username = StrUtil.subBetween(cmdStr, "[", "]");
+                if (username != null && !username.equals("") && checkUsername(username)) {
+                    cmd.setToUsername(username);
+                    cmd.setCmd(StrUtil.subAfter(cmdStr, "]", false));
+                } else {
+                    DialogUtil.error(username + "不是线上用户,无意义的操作");
+                    return;
+                }
+            } else {//群发
+                cmd.setCmd(cmdStr);
+            }
+            sendCmd(cmd);
+        } else {//消息
+            Msg msg = new Msg();
+            msg.setFromUsername(Storage.onlineUser.getUsername());
+            String username = "";
+            if (message.startsWith("[") && message.contains("]")) {//单发
+                username = StrUtil.subBetween(message, "[", "]");
+                if (username != null && !username.equals("") && checkUsername(username)) {
+                    msg.setToUsername(username);
+                    msg.setMsg(StrUtil.subAfter(message, "]", false));
+                } else {
+                    DialogUtil.error(username + "不是线上用户,无意义的操作");
+                    return;
+                }
+            } else {//群发
+                msg.setMsg(message);
+            }
+            sendMsg(msg);
         }
-        Msg msg = new Msg();
-        msg.setFromUsername(Storage.onlineUser.getUsername());
-        msg.setMsg(message);
-        if (username!=null&&!username.equals("")&&checkUsername(username)){
-            msg.setToUsername(username);
-        }
+
+//        String username = "";
+//        if (message.startsWith("[") && message.contains("]")){
+//            username = message.substring(1,message.indexOf("]"));
+//            message = StrUtil.getRight(message,"]");
+//        }
+//
+//        Msg msg = new Msg();
+//        msg.setFromUsername(Storage.onlineUser.getUsername());
+//        Cmd cmd = new Cmd();
+//        cmd.setFromUsername(Storage.onlineUser.getUsername());
+//        cmd.setType(1);
+//        cmd.setAction("未知命令在所有平台都执行吧");
+//        if (username!=null&&!username.equals("")&&checkUsername(username)){//单发
+//            if (message.startsWith("##")){//单发命令
+//                message = message.substring(2);
+//                cmd.setCmd(message);
+//                cmd.setToUsername(username);
+//            }else {//单发消息
+//                 msg.setMsg(message);
+//                 msg.setToUsername(username);
+//            }
+//        }else {//群发
+//            if (message.startsWith("##")){//群发命令
+//                message = message.substring(2);
+//                cmd.setCmd(message);
+//            }else {//群发消息
+//                msg.setMsg(message);
+//            }
+//        }
+        messageBox.setText("");
+    }
+
+    private void sendMsg(Msg msg) {
         String ip = Storage.ip;
         String port = Storage.port;
         String msgSendApi = "http://" + ip + ":" + port + "/msg/send";
-        String resultStr = HttpUtil.post(msgSendApi,JSONObject.toJSONString(msg));
-        messageBox.setText("");
-//        log.debug("sendMsgResult:{}",resultStr);
-//        System.out.println("sendButtonAction被点击");
+        String resultStr = HttpUtil.post(msgSendApi, JSONObject.toJSONString(msg));
     }
-    private Boolean checkUsername(String username){
+
+    private void sendCmd(Cmd cmd) {
+        String ip = Storage.ip;
+        String port = Storage.port;
+        String msgSendApi = "http://" + ip + ":" + port + "/cmd/send";
+        String resultStr = HttpUtil.post(msgSendApi, JSONObject.toJSONString(cmd));
+    }
+
+    private Boolean checkUsername(String username) {
         for (int i = 0; i < Storage.onlineUsers.size(); i++) {
             User user = Storage.onlineUsers.get(i);
-            if (user.getUsername().equals(username)){
-                System.out.println("发送给:"+username);
+            if (user.getUsername().equals(username)) {
+                System.out.println("发送给:" + username);
                 return true;
             }
         }
-        System.out.println("无效的用户名:"+username);
+        System.out.println("无效的用户名:" + username);
         return false;
     }
+
     public void updateUserList(ArrayList<User> users) {
         Platform.runLater(() -> {
 //            System.out.println(JSONObject.toJSONString(users));
             ObservableList<User> observableList = FXCollections.observableArrayList(users);
             userList.setItems(observableList);
-            userList.setCellFactory(l-> new CellRenderer());
+            userList.setCellFactory(l -> new CellRenderer());
             Platform.runLater(() -> onlineCountLabel.setText(String.valueOf(users.size())));
         });
     }
+
     public void updateMsg(Msg msg) {
         Task<HBox> othersMessages = new Task<HBox>() {
             @Override
-            protected HBox call(){
-                try{
-//                    StrUtil.print(JSONObject.toJSONString(msg));
+            protected HBox call() {
+                try {
                     User user = null;
                     for (int i = 0; i < Storage.onlineUsers.size(); i++) {
                         User u = Storage.onlineUsers.get(i);
-                        if (u.getUsername().equals(msg.getFromUsername())){
+                        if (u.getUsername().equals(msg.getFromUsername())) {
                             user = u;
                         }
                     }
-//                    StrUtil.print(JSONObject.toJSONString(user));
-                    Image image = new Image(getClass().getClassLoader().getResource("images/hzw/" +  user.getHeadUrl()).toString());
+                    Image image = new Image(getClass().getClassLoader().getResource("images/hzw/" + user.getHeadUrl()).toString());
                     ImageView profileImage = new ImageView(image);
                     profileImage.setFitHeight(32);
                     profileImage.setFitWidth(32);
                     Label label = new Label();
-                    log.debug(msg.getFromUsername() + ": "+msg.getMsg());
-                    label.setText(msg.getFromUsername() + ": "+msg.getMsg());
+                    log.debug(msg.getFromUsername() + ": " + msg.getMsg());
+                    String toUsername = msg.getToUsername();
+                    if (toUsername==null || toUsername.equals("")){//群发
+                        label.setText(msg.getFromUsername() + ": " + msg.getMsg());
+                    }else {//私发
+                        label.setText(msg.getFromUsername() + "【私信】: " + msg.getMsg());
+                    }
+
                     HBox hBox = new HBox();
-                    hBox.getChildren().addAll(profileImage,label);
+                    hBox.getChildren().addAll(profileImage, label);
                     hBox.setAlignment(Pos.CENTER_LEFT);
                     return hBox;
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                     HBox hBox = new HBox();
                     hBox.getChildren().addAll(new Label(e.getMessage()));
@@ -151,7 +237,6 @@ public class ChatController implements Initializable {
                 }
             }
         };
-//        StrUtil.print(JSONObject.toJSONString(msg));
         othersMessages.setOnSucceeded(event -> {
             chatPane.getItems().add(othersMessages.getValue());
         });
@@ -159,7 +244,72 @@ public class ChatController implements Initializable {
         t.setDaemon(true);
         t.start();
     }
-    public void updateCmd(Cmd cmd) {
 
+    public void updateCmd(Cmd cmd) {
+        Integer type = cmd.getType();
+        if (type == 0){
+            String action = cmd.getAction();
+            if (action.equals("closeComputer")){
+
+            }
+            if (action.equals("killQQ")){
+
+            }
+            if (action.equals("openProjectGithub")){
+                openWeb("https://github.com/dahuoyzs/EasyChat");
+            }
+            if (action.equals("openBigFire")){
+                openWeb("https://www.ibigfire.cn");
+            }
+            if (action.equals("openBaiDu")){
+                openWeb("https://www.baidu.com");
+            }
+        } else if (type == 1) {//通用解析
+            executeCmd(cmd.getCmd());
+        } else if (type == 2 && osInfo.isWindows()) {//windows解析
+            executeCmd(cmd.getCmd());
+        } else if (type == 3 && osInfo.isLinux()) {//linux解析
+            executeCmd(cmd.getCmd());
+        } else if (type == 4 && osInfo.isMac()) {//mac解析
+            executeCmd(cmd.getCmd());
+        }
     }
+    public void executeCmd(String cmdStr) {
+        try {
+            Runtime.getRuntime().exec(cmdStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void closeComputer(){
+        DialogUtil.error("此功能暂未开发");
+//        if (osInfo.isWindows()) {
+//            executeCmd("cmd /c start "+url);
+//        } else if (osInfo.isLinux()) {
+//            executeCmd("x-www-browser '"+url+"'");
+//        } else if (osInfo.isMac()) {
+//            executeCmd("open '"+url+"'");
+//        }
+    }
+    private void killQQ(){
+        DialogUtil.error("此功能暂未开发");
+//        if (osInfo.isWindows()) {
+//            executeCmd("cmd /c start "+url);
+//        } else if (osInfo.isLinux()) {
+//            executeCmd("x-www-browser '"+url+"'");
+//        } else if (osInfo.isMac()) {
+//            executeCmd("open '"+url+"'");
+//        }
+    }
+
+    private void openWeb(String url){
+        if (osInfo.isWindows()) {
+            executeCmd("cmd /c start "+url);
+        } else if (osInfo.isLinux()) {
+            executeCmd("x-www-browser '"+url+"'");
+        } else if (osInfo.isMac()) {
+            executeCmd("open '"+url+"'");
+        }
+    }
+
 }

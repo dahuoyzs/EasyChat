@@ -1,5 +1,7 @@
 package com.bigfire.easychat;
 
+import cn.hutool.core.util.StrUtil;
+
 /**
  * @ IDE    ：IntelliJ IDEA.
  * @ Author ：dahuo.
@@ -8,5 +10,8 @@ package com.bigfire.easychat;
  * @ Email  ：835476090@qq.com
  * @ Desc   :
  */
-public class App {
-}
+//public class App {
+//    public static void main(String[] args) {
+//
+//    }
+//}

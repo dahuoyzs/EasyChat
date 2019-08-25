@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cmd {
-    Integer type; //1为功能命令,2为windows命令，3为mac命令
+    Integer type; //1为功能命令,2为windows命令，3为linux命令4 mac
     String action;//用于描述命令  只有type为1 的时候才会取action
     //而action为对应的功能,后面会在启动时,默认添加一些基础的功能,如下
     //通用  关机,打开制定网页,客户端踢下线,关闭QQ,

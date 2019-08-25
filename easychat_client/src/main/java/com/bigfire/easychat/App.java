@@ -22,7 +22,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        primaryStage.setTitle("EasyChat0.0.3");
+        primaryStage.setTitle("EasyChat0.3.0");
         primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResource("images/icon/wx.png").toString()));
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/LoginLayout.fxml"));

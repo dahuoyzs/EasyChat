@@ -135,7 +135,6 @@ public class WebSocketServer {
     public void sendMessage(String username, String message) {
         log.info("给制定用户发消息:{} MSG:", username, message);
         Session session = sessionMap.get(username);
-        log.info(session.toString());
         if (session != null) {
             try {
                 session.getBasicRemote().sendText(message);

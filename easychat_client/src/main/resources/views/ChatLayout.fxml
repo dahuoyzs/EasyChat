@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.collections.*?>
 <?import javafx.scene.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import java.lang.String?>
 
-<BorderPane  fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bigfire.easychat.controller.ChatController">
+<BorderPane fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bigfire.easychat.controller.ChatController">
    <center>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <children>
@@ -24,7 +32,7 @@
             </ScrollPane>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" VBox.vgrow="NEVER">
                <children>
-                  <TextField fx:id="messageBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT"  prefHeight="16.0" prefWidth="698.0" promptText="输入要发送的消息" scaleShape="false" HBox.hgrow="ALWAYS">
+                  <TextField fx:id="messageBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="16.0" prefWidth="698.0" promptText="输入要发送的消息" scaleShape="false" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="SansSerif Regular" size="14.0" />
                      </font>
@@ -68,7 +76,7 @@
       </VBox>
    </left>
    <top>
-      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #eeeeee;" BorderPane.alignment="CENTER">
          <!--<center>-->
             <!--<ImageView fitHeight="79.0" fitWidth="522.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">-->
                <!--<image>-->
@@ -132,6 +140,29 @@
                   </VBox>
                </children></HBox>
          </left>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="60" fitWidth="273.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                      <Image url="@../images/icon/LogoA.png" />
+                      </image>
+                  </ImageView>
+                  <ImageView fx:id="githubImageView" fitHeight="30" fitWidth="30" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icon/github.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+
+            </HBox>
+         </center>
+         <right>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </right>
       </BorderPane>
    </top>
    <rotationAxis>
