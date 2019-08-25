@@ -11,7 +11,7 @@ https://github.com/dahuoyzs/EasyChat.git
 ####  技术选型
 
 - 后端技术：SpringBoot + Spring Data Jpa + H2数据库+Druid数据库连接池+ WebSocket+ Fastjson+Lombok
-- 前端技术：JAVAFX+WebSocketClient
+- 前端技术：JAVAFX+WebSocketClient+Hutool
 
 ##### 环境及插件要求
 
