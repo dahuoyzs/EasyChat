@@ -1,4 +1,6 @@
-https://github.com/dahuoyzs/EasyChat.git
+<p><center><img src = 'ScreenCapture/logo.png'></center></p>
+
+
 
 #### Project Profile
 
@@ -7,6 +9,10 @@ https://github.com/dahuoyzs/EasyChat.git
 ####  项目介绍
 
 “easychat”并不简单，它不仅是一个广域网聊天软件，也是一个跨平台的聊天软件，更是一个远程控制软件
+
+#### 视频效果
+
+待定
 
 ####  技术选型
 
@@ -19,3 +25,18 @@ https://github.com/dahuoyzs/EasyChat.git
 - Maven
 - Lombok（重要）
 
+
+
+ScreenCapture
+
+
+
+Client:
+
+![easychat](ScreenCapture/easychat.jpg)
+
+
+
+Mobile  Page
+
+![easychat](ScreenCapture/phoneControl.jpg)
