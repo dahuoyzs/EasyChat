@@ -1,5 +1,4 @@
-<p><center><img src = 'ScreenCapture/logo.png'></center></p>
-
+<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'ScreenCapture/logo.png'></a></center></p>
 
 
 #### Project Profile
@@ -12,7 +11,7 @@
 
 #### 视频效果
 
-待定
+https://www.bilibili.com/video/av65372361?pop_share=1
 
 ####  技术选型
 
