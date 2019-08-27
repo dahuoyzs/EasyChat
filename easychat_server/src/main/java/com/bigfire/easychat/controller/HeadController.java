@@ -1,7 +1,7 @@
 package com.bigfire.easychat.controller;
 
 import com.bigfire.easychat.entity.Head;
-import com.bigfire.easychat.entity.response.Result;
+import com.bigfire.easychat.common.util.Result;
 import com.bigfire.easychat.service.HeadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

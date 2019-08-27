@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @ Date   ：2019/8/17  11:10
  * @ Addr   ：China ShangHai
  * @ Email  ：835476090@qq.com
- * @ Desc   :
+ * @ Desc   :EasyChat 启动程序
  */
 
 @SpringBootApplication

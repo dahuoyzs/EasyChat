@@ -1,11 +1,9 @@
 package com.bigfire.easychat.controller;
 
 import com.bigfire.easychat.entity.Cmd;
-import com.bigfire.easychat.entity.Msg;
 import com.bigfire.easychat.entity.User;
-import com.bigfire.easychat.entity.response.Result;
+import com.bigfire.easychat.common.util.Result;
 import com.bigfire.easychat.service.CmdService;
-import com.bigfire.easychat.service.MsgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

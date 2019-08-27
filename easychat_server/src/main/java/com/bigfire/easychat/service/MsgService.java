@@ -2,7 +2,7 @@ package com.bigfire.easychat.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bigfire.easychat.entity.Msg;
-import com.bigfire.easychat.entity.response.Result;
+import com.bigfire.easychat.common.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

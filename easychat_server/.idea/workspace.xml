@@ -2,38 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c275fbe9-446e-430a-a274-ca27ec5c54c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easychat_client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/logs/log2019-08-25.log" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/logs/log2019-08-25.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/controller/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/entity/Cmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/entity/Cmd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/src/main/resources/views/ChatLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/main/resources/views/ChatLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/src/main/resources/views/LoginLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/main/resources/views/LoginLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/src/test/java/com/bigfire/easychat/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/test/java/com/bigfire/easychat/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/classes/META-INF/easychat_client.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/classes/com/bigfire/easychat/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/classes/com/bigfire/easychat/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/classes/com/bigfire/easychat/controller/ChatController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/classes/com/bigfire/easychat/controller/ChatController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/classes/com/bigfire/easychat/controller/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/classes/com/bigfire/easychat/controller/ChatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/classes/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/classes/views/ChatLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/classes/views/ChatLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/classes/views/LoginLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/classes/views/LoginLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/easychat.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/easychat.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/easychat.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/easychat.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easychat_client/target/test-classes/com/bigfire/easychat/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/websoket/MyWebSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easychat_client/src/main/java/com/bigfire/easychat/websoket/MyWebSocketClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Protocol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/DruidConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/CorsFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/alowFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/MyCorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/CmdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/CmdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/HeadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/HeadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/MsgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/MsgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/response/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/CmdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/CmdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/HeadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/HeadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/MsgService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/MsgService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/WebSocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/common/util/Protocol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/UserService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,47 +34,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/MsgController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="225">
+              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/CmdController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Result.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+            <state relative-caret-position="113">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="method#Result#2;class#Result#0" />
+                <element signature="method#Result#3;class#Result#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/alowFilter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
-              <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="165">
+              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,19 +69,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/CorsFilter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/HeadDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-175">
-              <caret line="11" selection-start-line="11" selection-start-column="2" selection-end-line="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/Cmd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="125">
+              <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,19 +81,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/Msg.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/CmdService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="46">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/HeadService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-104">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/MsgService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-250">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/WebSocketServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="143" column="9" lean-forward="true" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
+            <state relative-caret-position="2441">
+              <caret line="144" selection-start-line="144" selection-end-line="144" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,10 +126,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/banner.txt">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="100">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1409">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,12 +187,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/WebSocketService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/ResultGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/TestConrtoller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/StrUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/DruidConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/HeadSerice.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/HeadService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/TestController.java" />
@@ -204,10 +204,8 @@
         <option value="$PROJECT_DIR$/src/test/java/com/bigfire/easychat/util/JWTUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bigfire/easychat/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Storage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/JWTUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Protocol.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/response/Result.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/Head.java" />
@@ -216,13 +214,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/CmdController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/CmdService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/MsgService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/banner.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/alowFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/CorsFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/WebSocketServer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/template/manager.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/DruidConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/alowFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/MyCorsFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Storage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/response/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Result.java" />
       </list>
     </option>
   </component>
@@ -234,7 +239,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -246,8 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,76 +258,12 @@
               <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easychat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easychat" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easychat" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="filtter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="easychat" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -334,13 +273,16 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566744536722" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566883354499" />
     <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.10.RELEASE/spring-data-commons-2.0.10.RELEASE.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\desktop\文本\源码\mycode\easychat\easychat_server\src\main\resources\static" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.bigfire.easychat.common.filtter" />
       <recent name="com.bigfire.easychat.common.util" />
@@ -348,6 +290,7 @@
       <recent name="com.bigfire.easychat.common.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\desktop\文本\源码\mycode\easychat\easychat_server\src\main\resources\template" />
       <recent name="D:\desktop\文本\源码\mycode\easychat\easychat_server\src\main\java\com\bigfire\easychat\entity" />
       <recent name="D:\desktop\文本\源码\mycode\easychat\easychat_server\src\main\resources" />
     </key>
@@ -472,14 +415,18 @@
       <workItem from="1566687730021" duration="19161000" />
       <workItem from="1566718191488" duration="4279000" />
       <workItem from="1566737528961" duration="6036000" />
+      <workItem from="1566810685220" duration="110000" />
+      <workItem from="1566870122994" duration="666000" />
+      <workItem from="1566882358528" duration="1529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112357000" />
+    <option name="totallyTimeSpent" value="114662000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -487,9 +434,9 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.22390318" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22995462" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.34262297" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.76229507" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50075644" side_tool="true" weight="0.22786885" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32786885" />
@@ -499,7 +446,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49924356" weight="0.447541" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49924356" weight="0.36885247" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.5114754" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -520,44 +467,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.1.4.RELEASE/spring-data-jpa-2.1.4.RELEASE-sources.jar!/org/springframework/data/jpa/domain/Specification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="29" column="53" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.4.RELEASE/spring-data-commons-2.1.4.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.4.RELEASE/spring-data-commons-2.1.4.RELEASE-sources.jar!/org/springframework/data/repository/PagingAndSortingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.4.RELEASE/spring-data-commons-2.1.4.RELEASE-sources.jar!/org/springframework/data/repository/query/QueryByExampleExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.1.4.RELEASE/spring-data-jpa-2.1.4.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.1.4.RELEASE/spring-data-jpa-2.1.4.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaSpecificationExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -582,16 +491,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/bigfire/easychat/util/TokensUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/base/BaseRepositoryImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/HeadDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/bigfire/easychat/util/JWTUtil.java" />
     <entry file="jar://D:/java/jdk1.8/src.zip!/java/lang/IllegalArgumentException.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -699,17 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/response/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding>
-            <element signature="method#Result#2;class#Result#0" />
-            <element signature="method#Result#3;class#Result#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.1.4.RELEASE/spring-data-jpa-2.1.4.RELEASE-sources.jar!/org/springframework/data/jpa/repository/Query.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -724,59 +612,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/CmdService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/MsgService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Protocol.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/JWTUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/DruidConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -787,61 +627,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/Cmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/Msg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Storage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="400">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/banner.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/manager.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="850">
+          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/CorsFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/Cmd.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.4.RELEASE/spring-web-5.1.4.RELEASE.jar!/org/springframework/web/filter/CorsFilter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="123">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/MyCorsFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/config/DruidConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-127">
+          <caret line="32" column="89" selection-start-line="32" selection-start-column="89" selection-end-line="32" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Storage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -850,46 +712,131 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/CmdController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/CorsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="11" selection-start-line="11" selection-start-column="2" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/alowFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        <state relative-caret-position="315">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/MsgController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
+        <state relative-caret-position="165">
           <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/entity/Msg.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="23" />
+        <state relative-caret-position="165">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/controller/HeadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/util/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="method#Result#2;class#Result#0" />
+            <element signature="method#Result#3;class#Result#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/repository/HeadDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/CmdService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/HeadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/MsgService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1409">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/WebSocketServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="143" column="9" lean-forward="true" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
+        <state relative-caret-position="2441">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>

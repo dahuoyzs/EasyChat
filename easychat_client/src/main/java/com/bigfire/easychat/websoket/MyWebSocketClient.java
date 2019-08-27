@@ -47,7 +47,7 @@ public class MyWebSocketClient extends WebSocketClient {
 
     @Override
     public void onMessage(String resultStr) {
-        log.info("接收到消息：" + resultStr);
+        log.debug("接收到消息：" + resultStr);
         JSONObject result = JSONObject.parseObject(resultStr);
         Integer code = result.getInteger("code");
         String note = result.getString("msg");
@@ -66,12 +66,12 @@ public class MyWebSocketClient extends WebSocketClient {
             chatController.updateUserList(users);
         }else if (code==101){//消息
             JSONObject data = result.getJSONObject("data");
-            log.info("【msg】{}",data);
+            log.debug("【msg】{}",data);
             Msg msg = data.toJavaObject(Msg.class);
             chatController.updateMsg(msg);
         }else if (code==102){//cmd
             JSONObject data = result.getJSONObject("data");
-            log.info("【cmd】{}",data);
+            log.debug("【cmd】{}",data);
             Cmd cmd = data.toJavaObject(Cmd.class);
             chatController.updateCmd(cmd);
         }else {//未知信息

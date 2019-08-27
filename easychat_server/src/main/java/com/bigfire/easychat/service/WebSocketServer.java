@@ -1,13 +1,11 @@
 package com.bigfire.easychat.service;
 
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.bigfire.easychat.common.util.StrUtil;
 import com.bigfire.easychat.entity.User;
-import com.bigfire.easychat.entity.response.Result;
+import com.bigfire.easychat.common.util.Result;
 import com.bigfire.easychat.repository.UserDao;
-import com.fasterxml.jackson.annotation.JsonAlias;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

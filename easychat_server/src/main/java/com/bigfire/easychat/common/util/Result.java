@@ -1,6 +1,5 @@
-package com.bigfire.easychat.entity.response;
+package com.bigfire.easychat.common.util;
 
-import com.bigfire.easychat.entity.User;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -12,7 +11,7 @@ import java.time.LocalDateTime;
  * @ Date   ：2019/8/17  15:18
  * @ Addr   ：China ShangHai
  * @ Email  ：835476090@qq.com
- * @ Desc   :
+ * @ Desc   : 全局统一返回值
  */
 @Accessors(chain = true)
 @Data

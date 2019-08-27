@@ -1,19 +1,14 @@
 package com.bigfire.easychat.service;
 
 
-import cn.hutool.cache.impl.TimedCache;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.bigfire.easychat.common.util.JWTUtil;
 import com.bigfire.easychat.common.util.Storage;
 import com.bigfire.easychat.entity.User;
-import com.bigfire.easychat.entity.response.Result;
+import com.bigfire.easychat.common.util.Result;
 import com.bigfire.easychat.repository.UserDao;
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
