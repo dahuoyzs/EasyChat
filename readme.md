@@ -1,4 +1,4 @@
-<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'ScreenCapture/logo.png'></a></center></p>
+<p><center><a target='_blank' href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'ScreenCapture/logo.png'></a></center></p>
 
 
 #### Project Profile
