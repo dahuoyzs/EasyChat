@@ -62,8 +62,6 @@ public class ChatController implements Initializable {
     @FXML
     ImageView githubImageView;
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Storage.controllers.put("chatController", this);
@@ -131,46 +129,14 @@ public class ChatController implements Initializable {
             }
             sendMsg(msg);
         }
-
-//        String username = "";
-//        if (message.startsWith("[") && message.contains("]")){
-//            username = message.substring(1,message.indexOf("]"));
-//            message = StrUtil.getRight(message,"]");
-//        }
-//
-//        Msg msg = new Msg();
-//        msg.setFromUsername(Storage.onlineUser.getUsername());
-//        Cmd cmd = new Cmd();
-//        cmd.setFromUsername(Storage.onlineUser.getUsername());
-//        cmd.setType(1);
-//        cmd.setAction("未知命令在所有平台都执行吧");
-//        if (username!=null&&!username.equals("")&&checkUsername(username)){//单发
-//            if (message.startsWith("##")){//单发命令
-//                message = message.substring(2);
-//                cmd.setCmd(message);
-//                cmd.setToUsername(username);
-//            }else {//单发消息
-//                 msg.setMsg(message);
-//                 msg.setToUsername(username);
-//            }
-//        }else {//群发
-//            if (message.startsWith("##")){//群发命令
-//                message = message.substring(2);
-//                cmd.setCmd(message);
-//            }else {//群发消息
-//                msg.setMsg(message);
-//            }
-//        }
         messageBox.setText("");
     }
-
     private void sendMsg(Msg msg) {
         String ip = Storage.ip;
         String port = Storage.port;
         String msgSendApi = "http://" + ip + ":" + port + "/msg/send";
         String resultStr = HttpUtil.post(msgSendApi, JSONObject.toJSONString(msg));
     }
-
     private void sendCmd(Cmd cmd) {
         String ip = Storage.ip;
         String port = Storage.port;
@@ -189,7 +155,6 @@ public class ChatController implements Initializable {
         System.out.println("无效的用户名:" + username);
         return false;
     }
-
     public void updateUserList(ArrayList<User> users) {
         Platform.runLater(() -> {
 //            System.out.println(JSONObject.toJSONString(users));
@@ -224,7 +189,6 @@ public class ChatController implements Initializable {
                     }else {//私发
                         label.setText(msg.getFromUsername() + "【私信】: " + msg.getMsg());
                     }
-
                     HBox hBox = new HBox();
                     hBox.getChildren().addAll(profileImage, label);
                     hBox.setAlignment(Pos.CENTER_LEFT);
@@ -274,6 +238,7 @@ public class ChatController implements Initializable {
             executeCmd(cmd.getCmd());
         }
     }
+    //程序内 执行cmd 命令
     public void executeCmd(String cmdStr) {
         try {
             Runtime.getRuntime().exec(cmdStr);
@@ -283,25 +248,10 @@ public class ChatController implements Initializable {
     }
     private void closeComputer(){
         DialogUtil.error("此功能暂未开发");
-//        if (osInfo.isWindows()) {
-//            executeCmd("cmd /c start "+url);
-//        } else if (osInfo.isLinux()) {
-//            executeCmd("x-www-browser '"+url+"'");
-//        } else if (osInfo.isMac()) {
-//            executeCmd("open '"+url+"'");
-//        }
     }
     private void killQQ(){
-        DialogUtil.error("此功能暂未开发");
-//        if (osInfo.isWindows()) {
-//            executeCmd("cmd /c start "+url);
-//        } else if (osInfo.isLinux()) {
-//            executeCmd("x-www-browser '"+url+"'");
-//        } else if (osInfo.isMac()) {
-//            executeCmd("open '"+url+"'");
-//        }
+        DialogUtil.error("此功能暂未开发");//在网上找相关杀死QQ进程的命令直接执行即可
     }
-
     private void openWeb(String url){
         if (osInfo.isWindows()) {
             executeCmd("cmd /c start "+url);
