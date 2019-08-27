@@ -1,4 +1,4 @@
-<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'D:\desktop\文本\源码\mycode\easychat\ScreenCapture\logo.png'></a></center></p>
+<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'ScreenCapture/logo.png'></a></center></p>
 
 #### Project Profile
 
@@ -27,7 +27,7 @@ https://www.bilibili.com/video/av65372361?pop_share=1
 
 > 1. 下载项目到本地
 > 2. 用idea分别打开两个项目，先运行服务端，后运行客户端
-> 3. 服务端启动后，可以打开http://localhost:8080/manager.html查看页面
+> 3. 服务端启动后，可以打开http://localhost:8080/manager.html 查看页面
 > 4. 客户端登录需要先注册一个账号，注册好后可以直接登录。
 > 5. 登录好后网页上的功能即可有效。网页可以自行修改，或者扩展其他的命令。
 
@@ -103,10 +103,10 @@ ScreenCapture
 
 Client:
 
-![easychat](D:/desktop/文本/源码/mycode/easychat/ScreenCapture/easychat.jpg)
+![easychat](ScreenCapture/easychat.jpg)
 
 
 
 Mobile  Page
 
-![easychat](D:/desktop/文本/源码/mycode/easychat/ScreenCapture/phoneControl.jpg)
+![easychat](ScreenCapture/phoneControl.jpg)
