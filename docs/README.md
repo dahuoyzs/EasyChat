@@ -1,4 +1,4 @@
-<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'D:\desktop\文本\源码\mycode\easychat\ScreenCapture\logo.png'></a></center></p>
+<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'ScreenCapture/logo.png'></a></center></p>
 
 #### Project Profile
 
@@ -103,10 +103,10 @@ ScreenCapture
 
 Client:
 
-![easychat](D:/desktop/文本/源码/mycode/easychat/ScreenCapture/easychat.jpg)
+![easychat](ScreenCapture/easychat.jpg)
 
 
 
 Mobile  Page
 
-![easychat](D:/desktop/文本/源码/mycode/easychat/ScreenCapture/phoneControl.jpg)
+![easychat](ScreenCapture/phoneControl.jpg)
