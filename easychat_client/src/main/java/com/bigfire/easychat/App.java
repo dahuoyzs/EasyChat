@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -30,6 +31,9 @@ public class App extends Application {
         mainScene.setRoot(root);
         primaryStage.setResizable(false);
         primaryStage.setScene(mainScene);
+//        primaryStage.addEventFilter(KeyEvent.KEY_PRESSED, (e)->{
+//            System.out.println(e.getCode()+":"+e.getText());
+//        });
         primaryStage.show();
         Storage.stageViews.put("loginStage",primaryStage);
         primaryStage.setOnCloseRequest(e -> {

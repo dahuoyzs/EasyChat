@@ -1,0 +1,35 @@
+2019-08-29 23:15:35.676 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController : {"msg":"成功","code":200,"data":{"password":"1234","address":"","ip":"","headUrl":"hzwa.png","id":1,"username":"dahuo","createDate":"2019-08-29 15:15:35"},"time":"2019-08-2923:15:35.684"}
+2019-08-29 23:15:38.717 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:15:38.828 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:16:06.274 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController : 安全退出
+2019-08-29 23:20:47.644 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:20:47.655 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:22:04.787 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:22:04.809 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:22:39.752 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController : 安全退出
+2019-08-29 23:28:52.501 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:28:52.511 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:30:18.943 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:30:18.972 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:33:06.445 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:33:06.467 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:36:05.429 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:36:05.440 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:39:32.616 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:39:32.626 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:39:47.343 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController : 安全退出
+2019-08-29 23:40:39.414 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:40:39.437 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:41:07.380 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController : 安全退出
+2019-08-29 23:41:56.761 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:41:56.772 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:46:24.811 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:46:24.821 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:48:32.217 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:48:32.225 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:55:29.077 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:55:29.088 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:55:30.737 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController : 安全退出
+2019-08-29 23:58:09.274 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : onOpen()
+2019-08-29 23:58:09.284 [Thread-5] INFO  com.bigfire.easychat.websoket.MyWebSocketClient : 【onlineUsers】
+2019-08-29 23:58:11.090 [JavaFX Application Thread] INFO  com.bigfire.easychat.controller.LoginController : 安全退出

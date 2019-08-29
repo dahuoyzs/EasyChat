@@ -9,6 +9,7 @@ import com.bigfire.easychat.entity.Cmd;
 import com.bigfire.easychat.entity.Msg;
 import com.bigfire.easychat.entity.User;
 
+import com.bigfire.easychat.util.Audio;
 import com.bigfire.easychat.util.DialogUtil;
 import com.bigfire.easychat.util.Storage;
 import com.bigfire.easychat.websoket.MyWebSocketClient;
@@ -25,6 +26,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import lombok.extern.slf4j.Slf4j;
 
@@ -44,7 +47,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * @ Desc   :
  */
 @Slf4j
-public class ChatController implements Initializable {
+public class ChatController implements Initializable{
 
     OsInfo osInfo = new OsInfo();//系统信息
     @FXML
@@ -61,7 +64,10 @@ public class ChatController implements Initializable {
     ListView chatPane;
     @FXML
     ImageView githubImageView;
+    @FXML
+    BorderPane borderPane;
 
+    Audio audio = null;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Storage.controllers.put("chatController", this);
@@ -73,16 +79,32 @@ public class ChatController implements Initializable {
         userImageView.setImage(new Image(getClass().getClassLoader().getResource("images/hzw/" + user.getHeadUrl()).toString()));
         usernameLabel.setText(user.getUsername());
         MyWebSocketClient.connect(ip, port, user.getUsername());
+
         messageBox.setOnKeyPressed(e -> {
             String keyName = e.getCode().getName();
             if (keyName.equals("Enter")) {
                 sendButtonAction();
             }
         });
-        githubImageView.setOnMouseClicked((event) -> {
-            System.out.println("被点击了");
-            openWeb("https://github.com/dahuoyzs/EasyChat");
 
+        githubImageView.setOnMouseClicked((event) -> {
+            openWeb("https://github.com/dahuoyzs/EasyChat");
+        });
+
+        borderPane.addEventFilter(KeyEvent.KEY_PRESSED,e->{
+//            System.out.println("按下"+e.getCode()+":"+e.getText()+":"+e.getCode().getName());
+//            if (e.getCode().getName().toUpperCase().equals("ALT")){
+//                audio = new Audio();
+//                audio.startCapture();
+//            }
+
+        });
+        borderPane.addEventFilter(KeyEvent.KEY_RELEASED,e->{
+//            System.out.println("放开" + e.getCode() + ":" + e.getText()+":"+e.getCode().getName());
+//            if (e.getCode().getName().toUpperCase().equals("ALT")) {
+//                byte[] bytes = audio.stop();
+//                audio.play();
+//            }
         });
     }
 

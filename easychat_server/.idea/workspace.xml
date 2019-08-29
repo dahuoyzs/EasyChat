@@ -3,6 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c275fbe9-446e-430a-a274-ca27ec5c54c6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/easychat_server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/common/util/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/common/util/Storage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/CmdController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/CmdController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/HeadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/HeadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/MsgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/MsgController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/entity/response/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/CmdService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/CmdService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/HeadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/HeadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/MsgService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/MsgService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bigfire/easychat/service/WebSocketServer.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -14,14 +27,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="25">
-              <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+              <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/manager.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -132,6 +154,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,11 +162,56 @@
               <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easychat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easychat_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easychat_server" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,15 +367,15 @@
       <workItem from="1566870122994" duration="666000" />
       <workItem from="1566882358528" duration="1529000" />
       <workItem from="1566886338379" duration="248000" />
+      <workItem from="1566917046668" duration="1228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114910000" />
+    <option name="totallyTimeSpent" value="116138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -315,9 +383,9 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22995462" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.33736762" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.76229507" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.5032787" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50075644" side_tool="true" weight="0.22786885" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32786885" />
@@ -327,7 +395,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49924356" weight="0.36885247" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49924356" weight="0.5622951" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.5114754" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -539,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/manager.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/common/filtter/CorsFilter.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.4.RELEASE/spring-web-5.1.4.RELEASE.jar!/org/springframework/web/filter/CorsFilter.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -702,10 +763,17 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bigfire/easychat/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
-          <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/manager.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
         </state>
       </provider>
     </entry>

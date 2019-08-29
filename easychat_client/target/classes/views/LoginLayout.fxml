@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+
+<!--<?import com.jfoenix.controls.JFXButton?>-->
+<!--<?import com.jfoenix.controls.JFXTextField?>-->
+
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane fx:id="borderPane" maxWidth="800.0" minWidth="400.0" prefHeight="400.0" prefWidth="500.0" stylesheets="@../styles/Login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bigfire.easychat.controller.LoginController">
+    <center>
+        <GridPane prefHeight="400.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="400.0" minWidth="50.0" prefWidth="300.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="50.0" />
+                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" />
+            </rowConstraints>
+            <children>
+
+                <StackPane GridPane.columnIndex="1" >
+                    <children>
+                        <ImageView fx:id="imageViewHead">
+                           <image >
+                               <Image fx:id="headImage"  backgroundLoading="true" url="@../images/hzw/hzwa.png" />
+                           </image>
+                            <fitWidth>60</fitWidth>
+                            <fitHeight>60</fitHeight>
+                            <clip>
+                                <Circle fx:id="circle"  centerX="30" centerY="30" fill="aqua">
+                                    <radius>30</radius>
+                                </Circle>
+                            </clip>
+                        </ImageView>
+                        <!--<ImageView fx:id="Sarahview" fitHeight="93.0" fitWidth="86.0" preserveRatio="true" visible="true">-->
+                        <!--<image>-->
+                        <!--<Image fx:id="headImage" url="@../images/icon/head_man.png" />-->
+                        <!--</image>-->
+                        <!--</ImageView>-->
+                    </children>
+                </StackPane>
+                <Label fx:id="noteLabel" alignment="CENTER" prefHeight="15.0" prefWidth="322.0" text="" textFill="Black" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="usernameTextfield" focusTraversable="true" prefHeight="25.0" promptText="用户名" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <PasswordField fx:id="passwordField" prefHeight="25.0" promptText="密码" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <!--<JFXTextField focusTraversable="true" prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="用户名"></JFXTextField>-->
+                <!--<JFXTextField  prefHeight="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2"  promptText="密    码"></JFXTextField>-->
+                <!--<JFXTextField  prefHeight="25.0" prefWidth="263.0" text="localhost" GridPane.columnIndex="1" GridPane.rowIndex="4"  promptText="IP"></JFXTextField>-->
+                <!--<JFXTextField  prefHeight="25.0" prefWidth="263.0" text="9001" GridPane.columnIndex="1" GridPane.rowIndex="5"  promptText="密    码"></JFXTextField>-->
+
+
+                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <left>
+                        <Button mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="130.0" text="登录" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+
+                    </left>
+                    <right>
+                        <Button mnemonicParsing="false" onAction="#register" prefHeight="36.0" prefWidth="130.0" text="注册" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+
+                    </right>
+
+                </BorderPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <!--<TextField fx:id="ipTextfield" focusTraversable="true" prefHeight="25.0" prefWidth="206.0" promptText="IP" text="localhost" />-->
+                   <TextField fx:id="ipTextfield" focusTraversable="true" prefHeight="25.0" prefWidth="206.0" promptText="IP" text="182.254.188.25" />
+                   <TextField fx:id="portTextfield" prefHeight="25.0" prefWidth="73.0" promptText="端口" text="8080" />
+               </children>
+            </HBox>
+            <!--<Button mnemonicParsing="false" onAction="#testConnect" text="检测" GridPane.columnIndex="1" GridPane.rowIndex="6" />-->
+            <!--<Button mnemonicParsing="false" onAction="#test" text="测试" GridPane.rowIndex="6" />-->
+            <ImageView fx:id="imageViewTest"  fitHeight="130.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>
