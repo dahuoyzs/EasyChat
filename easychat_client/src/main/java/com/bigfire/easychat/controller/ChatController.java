@@ -2,16 +2,16 @@ package com.bigfire.easychat.controller;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
-import cn.hutool.setting.dialect.Props;
 import cn.hutool.system.OsInfo;
 import com.alibaba.fastjson.JSONObject;
+import com.baidu.aip.speech.AipSpeech;
 import com.bigfire.easychat.entity.Cmd;
 import com.bigfire.easychat.entity.Msg;
 import com.bigfire.easychat.entity.User;
 
-import com.bigfire.easychat.util.Audio;
 import com.bigfire.easychat.util.DialogUtil;
 import com.bigfire.easychat.util.Storage;
+import com.bigfire.easychat.util.voice.Audio;
 import com.bigfire.easychat.websoket.MyWebSocketClient;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -22,7 +22,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -30,13 +29,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * @ IDE    ：IntelliJ IDEA.
@@ -47,8 +46,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * @ Desc   :
  */
 @Slf4j
-public class ChatController implements Initializable{
-
+public class ChatController implements Initializable {
+    public static final String APP_ID = "10790983";
+    public static final String API_KEY = "3jfvvxihnPyBBWSVykRd40kN";
+    public static final String SECRET_KEY = "keID4x33wtzpgEvwG9DwZ6dOEyrZlZIl";
     OsInfo osInfo = new OsInfo();//系统信息
     @FXML
     ImageView userImageView;
@@ -67,7 +68,6 @@ public class ChatController implements Initializable{
     @FXML
     BorderPane borderPane;
 
-    Audio audio = null;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Storage.controllers.put("chatController", this);
@@ -91,20 +91,74 @@ public class ChatController implements Initializable{
             openWeb("https://github.com/dahuoyzs/EasyChat");
         });
 
-        borderPane.addEventFilter(KeyEvent.KEY_PRESSED,e->{
+        AipSpeech client = new AipSpeech(APP_ID, API_KEY, SECRET_KEY);
+        client.setConnectionTimeoutInMillis(2000);
+        client.setSocketTimeoutInMillis(60000);
+
+        Audio audio = new Audio();
+        audio.setVoiceStopListener(data -> {
+            org.json.JSONObject res = client.asr(data, "pcm", 16000, null);
+            try {
+                JSONArray jsonArray = res.getJSONArray("result");
+                String resultStr = jsonArray.getString(0);
+                System.out.println(resultStr);
+                if (resultStr.contains("百度")) {
+                    String content = StrUtil.subAfter(resultStr, "百度", false);
+                    String url = "https://www.baidu.com/s?word=" + content;
+                    executeCmd("cmd /c start " + url);
+                }
+                if (resultStr.contains("视频教程")) {
+                    executeCmd("cmd /c start " + "https://www.bilibili.com/video/av65653369/");
+                }
+                if (resultStr.contains("官网")) {
+                    executeCmd("cmd /c start " + "www.ibigfire.cn");
+                }
+                if (resultStr.contains("计算器")) {
+                    executeCmd("calc");
+                }
+                if (resultStr.contains("笔记本")) {
+                    executeCmd("notepad");
+                }
+                if (resultStr.contains("一分关机")) {
+                    executeCmd("shutdown -s -f -t 60");
+                }
+                if (resultStr.contains("五分关机")) {
+                    executeCmd("shutdown -s -f -t 300");
+                }
+                if (resultStr.contains("立即关机")) {
+                    executeCmd("shutdown -s -f -t 00");
+                }
+                if (resultStr.contains("立刻关机")) {
+                    executeCmd("shutdown -s -f -t 00");
+                }
+                if (resultStr.contains("取消关机")) {
+                    System.out.println("取消关机命令被执行");
+                    executeCmd("shutdown /a");
+                }
+
+                if (resultStr.contains("关掉QQ")) {
+                    executeCmd("taskkill /f /im qq.exe");
+                }
+                if (resultStr.contains("我的电脑")) {
+                    executeCmd("Explorer.exe /s,");
+                }
+            }catch (JSONException exception){
+                log.info("json异常"+exception.getMessage());
+            }
+        });
+
+        borderPane.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
 //            System.out.println("按下"+e.getCode()+":"+e.getText()+":"+e.getCode().getName());
-//            if (e.getCode().getName().toUpperCase().equals("ALT")){
-//                audio = new Audio();
-//                audio.startCapture();
-//            }
+            if (e.getCode().getName().toUpperCase().equals("ALT")) {
+                audio.captureAudio();
+            }
 
         });
-        borderPane.addEventFilter(KeyEvent.KEY_RELEASED,e->{
+        borderPane.addEventFilter(KeyEvent.KEY_RELEASED, e -> {
 //            System.out.println("放开" + e.getCode() + ":" + e.getText()+":"+e.getCode().getName());
-//            if (e.getCode().getName().toUpperCase().equals("ALT")) {
-//                byte[] bytes = audio.stop();
-//                audio.play();
-//            }
+            if (e.getCode().getName().toUpperCase().equals("ALT")) {
+                audio.stop();
+            }
         });
     }
 
@@ -153,12 +207,14 @@ public class ChatController implements Initializable{
         }
         messageBox.setText("");
     }
+
     private void sendMsg(Msg msg) {
         String ip = Storage.ip;
         String port = Storage.port;
         String msgSendApi = "http://" + ip + ":" + port + "/msg/send";
         String resultStr = HttpUtil.post(msgSendApi, JSONObject.toJSONString(msg));
     }
+
     private void sendCmd(Cmd cmd) {
         String ip = Storage.ip;
         String port = Storage.port;
@@ -177,6 +233,7 @@ public class ChatController implements Initializable{
         System.out.println("无效的用户名:" + username);
         return false;
     }
+
     public void updateUserList(ArrayList<User> users) {
         Platform.runLater(() -> {
 //            System.out.println(JSONObject.toJSONString(users));
@@ -206,9 +263,9 @@ public class ChatController implements Initializable{
                     Label label = new Label();
                     log.debug(msg.getFromUsername() + ": " + msg.getMsg());
                     String toUsername = msg.getToUsername();
-                    if (toUsername==null || toUsername.equals("")){//群发
+                    if (toUsername == null || toUsername.equals("")) {//群发
                         label.setText(msg.getFromUsername() + ": " + msg.getMsg());
-                    }else {//私发
+                    } else {//私发
                         label.setText(msg.getFromUsername() + "【私信】: " + msg.getMsg());
                     }
                     HBox hBox = new HBox();
@@ -233,21 +290,21 @@ public class ChatController implements Initializable{
 
     public void updateCmd(Cmd cmd) {
         Integer type = cmd.getType();
-        if (type == 0){
+        if (type == 0) {
             String action = cmd.getAction();
-            if (action.equals("closeComputer")){
+            if (action.equals("closeComputer")) {
 
             }
-            if (action.equals("killQQ")){
+            if (action.equals("killQQ")) {
 
             }
-            if (action.equals("openProjectGithub")){
+            if (action.equals("openProjectGithub")) {
                 openWeb("https://github.com/dahuoyzs/EasyChat");
             }
-            if (action.equals("openBigFire")){
+            if (action.equals("openBigFire")) {
                 openWeb("https://www.ibigfire.cn");
             }
-            if (action.equals("openBaiDu")){
+            if (action.equals("openBaiDu")) {
                 openWeb("https://www.baidu.com");
             }
         } else if (type == 1) {//通用解析
@@ -260,6 +317,7 @@ public class ChatController implements Initializable{
             executeCmd(cmd.getCmd());
         }
     }
+
     //程序内 执行cmd 命令
     public void executeCmd(String cmdStr) {
         try {
@@ -268,19 +326,22 @@ public class ChatController implements Initializable{
             e.printStackTrace();
         }
     }
-    private void closeComputer(){
+
+    private void closeComputer() {
         DialogUtil.error("此功能暂未开发");
     }
-    private void killQQ(){
+
+    private void killQQ() {
         DialogUtil.error("此功能暂未开发");//在网上找相关杀死QQ进程的命令直接执行即可
     }
-    private void openWeb(String url){
+
+    private void openWeb(String url) {
         if (osInfo.isWindows()) {
-            executeCmd("cmd /c start "+url);
+            executeCmd("cmd /c start " + url);
         } else if (osInfo.isLinux()) {
-            executeCmd("x-www-browser '"+url+"'");
+            executeCmd("x-www-browser '" + url + "'");
         } else if (osInfo.isMac()) {
-            executeCmd("open '"+url+"'");
+            executeCmd("open '" + url + "'");
         }
     }
 

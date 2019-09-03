@@ -36,6 +36,7 @@ public class Audio {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         //取得录音输入流
         audioFormat = getAudioFormat();
+
         byte audioData[] = baos.toByteArray();
         bais = new ByteArrayInputStream(audioData);
         ais = new AudioInputStream(bais, audioFormat, audioData.length / audioFormat.getFrameSize());

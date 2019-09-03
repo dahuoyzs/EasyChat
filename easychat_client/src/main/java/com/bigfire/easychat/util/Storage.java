@@ -27,5 +27,6 @@ public class Storage {
     public static List<User> onlineUsers;
     public static String ip;
     public static String port;
+    public static byte[] voiceData;
 
 }

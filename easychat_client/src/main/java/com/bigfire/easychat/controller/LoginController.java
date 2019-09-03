@@ -1,16 +1,16 @@
 package com.bigfire.easychat.controller;
 
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.http.HttpException;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONObject;
+import com.baidu.aip.speech.AipSpeech;
 import com.bigfire.easychat.entity.User;
 import com.bigfire.easychat.util.DialogUtil;
 import com.bigfire.easychat.util.IPUtil;
 import com.bigfire.easychat.util.Storage;
+import com.bigfire.easychat.util.voice.Audio;
 import com.bigfire.easychat.websoket.MyWebSocketClient;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,10 +22,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONArray;
 
 
 import java.io.IOException;
@@ -61,6 +62,9 @@ public class LoginController implements Initializable, TaskOk {
     private String ip;
     private String port;
     private Boolean isCanConnect;
+    @FXML
+    BorderPane borderPane;
+
 
     //登录
     public void login() {
@@ -236,7 +240,83 @@ public class LoginController implements Initializable, TaskOk {
                 login();
             }
         });
-    }
 
+        AipSpeech client = new AipSpeech(ChatController.APP_ID,ChatController.API_KEY, ChatController.SECRET_KEY);
+        client.setConnectionTimeoutInMillis(2000);
+        client.setSocketTimeoutInMillis(60000);
+
+        Audio audio = new Audio();
+        audio.setVoiceStopListener(data -> {
+            org.json.JSONObject res = client.asr(data, "pcm", 16000, null);
+            System.out.println(res);
+            JSONArray jsonArray = res.getJSONArray("result");
+            String resultStr = jsonArray.getString(0);
+            System.out.println(resultStr);
+            if (resultStr.contains("百度")) {
+                String content = StrUtil.subAfter(resultStr, "百度", false);
+                String url = "https://www.baidu.com/s?word=" + content;
+                executeCmd("cmd /c start " + url);
+            }
+            if (resultStr.contains("视频教程")) {
+                executeCmd("cmd /c start " + "https://www.bilibili.com/video/av65653369/");
+            }
+            if (resultStr.contains("官网")) {
+                executeCmd("cmd /c start " + "www.ibigfire.cn");
+            }
+            if (resultStr.contains("计算器")) {
+                executeCmd("calc");
+            }
+            if (resultStr.contains("笔记本")) {
+                executeCmd("notepad");
+            }
+            if (resultStr.contains("一分关机")) {
+                executeCmd("shutdown -s -f -t 60");
+            }
+            if (resultStr.contains("五分关机")) {
+                executeCmd("shutdown -s -f -t 300");
+            }
+            if (resultStr.contains("立即关机")) {
+                executeCmd("shutdown -s -f -t 00");
+            }
+            if (resultStr.contains("立刻关机")) {
+                executeCmd("shutdown -s -f -t 00");
+            }
+            if (resultStr.contains("取消关机")) {
+                System.out.println("取消关机命令被执行");
+                executeCmd("shutdown /a");
+            }
+
+            if (resultStr.contains("关掉QQ")) {
+                executeCmd("taskkill /f /im qq.exe");
+            }
+            if (resultStr.contains("我的电脑")) {
+                executeCmd("Explorer.exe /s,");
+            }
+
+        });
+
+        borderPane.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+//            System.out.println("按下"+e.getCode()+":"+e.getText()+":"+e.getCode().getName());
+            if (e.getCode().getName().toUpperCase().equals("ALT")) {
+                audio.captureAudio();
+            }
+
+        });
+        borderPane.addEventFilter(KeyEvent.KEY_RELEASED, e -> {
+//            System.out.println("放开" + e.getCode() + ":" + e.getText()+":"+e.getCode().getName());
+            if (e.getCode().getName().toUpperCase().equals("ALT")) {
+                audio.stop();
+            }
+        });
+
+    }
+    //程序内 执行cmd 命令
+    public void executeCmd(String cmdStr) {
+        try {
+            Runtime.getRuntime().exec(cmdStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
