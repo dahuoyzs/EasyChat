@@ -1,4 +1,4 @@
-<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'ScreenCapture/logo.png'></a></center></p>
+<p><center><a href='https://www.bilibili.com/video/av65372361?pop_share=1'><img src = 'https://github.com/dahuoyzs/EasyChat/tree/master/ScreenCapture/logo.png'></a></center></p>
 #### Project Profile
 
 "EasyChat"  is not easy, it is not only a WAN chat software, but also a cross-platform chat software, and a remote control software.
@@ -99,10 +99,10 @@ ScreenCapture
 
 Client:
 
-![easychat](ScreenCapture/easychat.jpg)
+![easychat](https://github.com/dahuoyzs/EasyChat/tree/master/ScreenCapture/easychat.jpg)
 
 
 
 Mobile  Page
 
-![easychat](ScreenCapture/phoneControl.jpg)
+![easychat](https://github.com/dahuoyzs/EasyChat/tree/master/ScreenCapture/phoneControl.jpg)

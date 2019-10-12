@@ -8,6 +8,7 @@ import com.bigfire.easychat.entity.User;
 import com.bigfire.easychat.util.DialogUtil;
 import com.bigfire.easychat.util.IPUtil;
 import com.bigfire.easychat.util.Storage;
+import com.bigfire.easychat.util.Terminal;
 import com.bigfire.easychat.util.voice.Audio;
 import com.bigfire.easychat.websoket.MyWebSocketClient;
 import javafx.application.Platform;
@@ -116,8 +117,6 @@ public class LoginController implements Initializable, TaskOk {
             Stage loginStage = Storage.stageViews.get("loginStage");
             loginStage.close();
             chatStage.show();
-
-
         }else if (loginCode == 500){
             DialogUtil.error(loginMsg);
         }
@@ -174,7 +173,6 @@ public class LoginController implements Initializable, TaskOk {
 
     @Override
     public void changeHead(Image image) {
-
         imageViewHead.setImage(image);
     }
 
@@ -246,7 +244,7 @@ public class LoginController implements Initializable, TaskOk {
         client.setSocketTimeoutInMillis(60000);
 
         Audio audio = new Audio();
-        audio.setVoiceStopListener(data -> {
+        audio.setAudioStopListener(data -> {
             org.json.JSONObject res = client.asr(data, "pcm", 16000, null);
             System.out.println(res);
             JSONArray jsonArray = res.getJSONArray("result");
@@ -255,42 +253,42 @@ public class LoginController implements Initializable, TaskOk {
             if (resultStr.contains("百度")) {
                 String content = StrUtil.subAfter(resultStr, "百度", false);
                 String url = "https://www.baidu.com/s?word=" + content;
-                executeCmd("cmd /c start " + url);
+                Terminal.run("cmd /c start " + url);
             }
             if (resultStr.contains("视频教程")) {
-                executeCmd("cmd /c start " + "https://www.bilibili.com/video/av65653369/");
+                Terminal.run("cmd /c start " + "https://www.bilibili.com/video/av65653369/");
             }
             if (resultStr.contains("官网")) {
-                executeCmd("cmd /c start " + "www.ibigfire.cn");
+                Terminal.run("cmd /c start " + "www.ibigfire.cn");
             }
             if (resultStr.contains("计算器")) {
-                executeCmd("calc");
+                Terminal.run("calc");
             }
             if (resultStr.contains("笔记本")) {
-                executeCmd("notepad");
+                Terminal.run("notepad");
             }
             if (resultStr.contains("一分关机")) {
-                executeCmd("shutdown -s -f -t 60");
+                Terminal.run("shutdown -s -f -t 60");
             }
             if (resultStr.contains("五分关机")) {
-                executeCmd("shutdown -s -f -t 300");
+                Terminal.run("shutdown -s -f -t 300");
             }
             if (resultStr.contains("立即关机")) {
-                executeCmd("shutdown -s -f -t 00");
+                Terminal.run("shutdown -s -f -t 00");
             }
             if (resultStr.contains("立刻关机")) {
-                executeCmd("shutdown -s -f -t 00");
+                Terminal.run("shutdown -s -f -t 00");
             }
             if (resultStr.contains("取消关机")) {
                 System.out.println("取消关机命令被执行");
-                executeCmd("shutdown /a");
+                Terminal.run("shutdown /a");
             }
 
             if (resultStr.contains("关掉QQ")) {
-                executeCmd("taskkill /f /im qq.exe");
+                Terminal.run("taskkill /f /im qq.exe");
             }
             if (resultStr.contains("我的电脑")) {
-                executeCmd("Explorer.exe /s,");
+                Terminal.run("Explorer.exe /s,");
             }
 
         });
@@ -310,13 +308,4 @@ public class LoginController implements Initializable, TaskOk {
         });
 
     }
-    //程序内 执行cmd 命令
-    public void executeCmd(String cmdStr) {
-        try {
-            Runtime.getRuntime().exec(cmdStr);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 }

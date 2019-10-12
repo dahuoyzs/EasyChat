@@ -28,5 +28,4 @@ public class Storage {
     public static String ip;
     public static String port;
     public static byte[] voiceData;
-
 }

@@ -29,8 +29,6 @@ public class DruidConfig {
     @Bean
     public ServletRegistrationBean druidStatViewServlet(){
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
-//        servletRegistrationBean.addInitParameter("allow","*");//不设置 默认也是所有人可以访问
-//        servletRegistrationBean.addInitParameter("deny","192.168.X.XXX");//设置可以拒绝某个IP访问
         servletRegistrationBean.addInitParameter("loginUsername","admin");
         servletRegistrationBean.addInitParameter("loginPassword","123456");
         //是否能够重置数据.

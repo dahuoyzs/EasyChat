@@ -1,5 +1,7 @@
 package com.bigfire.easychat.util.voice;
 
+import com.bigfire.easychat.util.StrUtil;
+
 import javax.sound.sampled.*;
 import java.io.*;
 
@@ -12,12 +14,12 @@ import java.io.*;
  * @ Desc   :
  */
 public class Audio {
-    private AudioStopListener voiceStopListener;
+    private AudioStopListener audioStopListener;
     private boolean isRecording = false;
     private ByteArrayOutputStream out;
 
-    public void setVoiceStopListener(AudioStopListener voiceStopListener) {
-        this.voiceStopListener = voiceStopListener;
+    public void setAudioStopListener(AudioStopListener audioStopListener) {
+        this.audioStopListener = audioStopListener;
     }
 
     public void setRecording(boolean flag) {
@@ -70,8 +72,8 @@ public class Audio {
                             out.flush();
                             line.close();
                             line.flush();
-                            if (voiceStopListener != null) {
-                                voiceStopListener.onStop(out.toByteArray());
+                            if (audioStopListener != null) {
+                                audioStopListener.onStop(out.toByteArray());
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -138,7 +140,7 @@ public class Audio {
             String fileName = filePath.getPath() + "/" + System.currentTimeMillis() + ".mp3";
             File file = new File(fileName);
             AudioSystem.write(ais, AudioFileFormat.Type.WAVE, file);
-            System.out.println("音频文件存储成功,路径:"+fileName);
+            StrUtil.print("音频文件存储成功,路径:"+fileName);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

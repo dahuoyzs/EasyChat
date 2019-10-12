@@ -96,7 +96,7 @@ public class ChatController implements Initializable {
         client.setSocketTimeoutInMillis(60000);
 
         Audio audio = new Audio();
-        audio.setVoiceStopListener(data -> {
+        audio.setAudioStopListener(data -> {
             org.json.JSONObject res = client.asr(data, "pcm", 16000, null);
             try {
                 JSONArray jsonArray = res.getJSONArray("result");
