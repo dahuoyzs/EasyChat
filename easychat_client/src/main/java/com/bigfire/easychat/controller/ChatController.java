@@ -47,9 +47,9 @@ import java.util.ResourceBundle;
  */
 @Slf4j
 public class ChatController implements Initializable {
-    public static final String APP_ID = "10790983";
-    public static final String API_KEY = "3jfvvxihnPyBBWSVykRd40kN";
-    public static final String SECRET_KEY = "keID4x33wtzpgEvwG9DwZ6dOEyrZlZIl";
+    public static final String APP_ID = "";                             //百度识别APP_ID，请自己申请
+    public static final String API_KEY = "";                            //百度识别API_KEY，请自己申请
+    public static final String SECRET_KEY = "";                         //百度识别SECRET_KEY，请自己申请
     OsInfo osInfo = new OsInfo();//系统信息
     @FXML
     ImageView userImageView;
